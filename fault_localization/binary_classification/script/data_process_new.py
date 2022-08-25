@@ -47,6 +47,42 @@ def cut_data(token_seq, token_length_for_reserve):
             return token_seq[start_index: start_index + token_length_for_reserve]
 
 
+def generate_token_seq(tokens,token_length_for_reserve):
+    t_seq = []
+    last_token=None
+    for i in range(len(tokens)):
+        token = tokens[i]
+        if isinstance(token, javalang.tokenizer.String):
+            tmp_token = ["stringliteral"]
+        else:
+            tmp_token = []
+            cur_token = solve_camel_and_underline(token.value)
+            if i > 0 and isinstance(token, javalang.tokenizer.Identifier) and (
+                    isinstance(tokens[i - 1], javalang.tokenizer.Identifier) or isinstance(tokens[i - 1],
+                                                                                           javalang.tokenizer.BasicType)):
+                type_token_seq = solve_camel_and_underline(tokens[i - 1].value)
+                for t_token in cur_token:
+                    tmp_token.append([type_token_seq, cur_token[:cur_token.index(t_token)], t_token])
+
+        t_seq += tmp_token
+    return cut_data(t_seq, token_length_for_reserve)
+
+def token2num(tokens,vocab_dict,index_oov):
+    num_seq=[]
+    for token in tokens:
+        if type(token)==str:
+            num=vocab_dict[token] if token in vocab_dict else index_oov
+        else:
+
+            identifiers=token[0]
+            prev_token=token[1]
+            cur_token=token[2]
+            iden_nums=[vocab_dict[t] if token in vocab_dict else index_oov for t in identifiers]
+            prev_nums=[vocab_dict[t] if token in vocab_dict else index_oov for t in prev_token]
+            cur_num=vocab_dict[cur_token] if token in vocab_dict else index_oov
+            num=[iden_nums,prev_nums,cur_num]
+        num_seq.append(num)
+    return num_seq
 if __name__ == "__main__":
 
     current_pattern = sys.argv[1]
@@ -99,55 +135,22 @@ if __name__ == "__main__":
         for index, method in enumerate(random_copy):
             method = method.strip()
             tokens = javalang.tokenizer.tokenize(method)
-            token_seq = []
-            for token in tokens:
-                if isinstance(token, javalang.tokenizer.String):
-                    tmp_token = ["stringliteral"]
-                else:
-                    tmp_token = solve_camel_and_underline(token.value)
-                token_seq += tmp_token
-            token_seq = cut_data(token_seq, token_length_for_reserve)
+
+            token_seq = generate_token_seq(tokens,token_length_for_reserve)
+
             if index + 1 < len(random_copy) * train_prop:
                 token_seq_dataset["train"][tag].append(token_seq)
-                w2v_training_corpus.append(token_seq)
             elif index + 1 < len(random_copy) * (train_prop + val_prop):
                 token_seq_dataset["val"][tag].append(token_seq)
             else:
                 token_seq_dataset["test"][tag].append(token_seq)
 
-    # Token vectors pre-training and saving
-    print("Token vectors pre-training and saving")
-    random.seed(shuffle_seed)
-    random.shuffle(w2v_training_corpus)
-    w2v = Word2Vec(w2v_training_corpus, size=vector_size, workers=16, sg=1, min_count=2, max_vocab_size=50000)
-    w2v.save(os.path.join(output_data_dir, "w2v_{}".format(vector_size)))
-    print("vocab_size: {}".format(len(w2v.wv.vocab)))
-    vectors = w2v.wv.syn0
-    extend_vectors = np.zeros([extend_size, vector_size], dtype="float32")  # extend_size = 2
-    vectors = np.vstack([vectors, extend_vectors])
-    vocab_list = list(w2v.wv.vocab.keys())
-    vocab_dict = {}
-    for token in vocab_list:
-        vocab_dict[token] = w2v.wv.vocab[token].index
-    del vocab_list
 
-    # Initiating "OOV" and "PADDING" keyword
-    print("Initiating \"OOV\" and \"PADDING\" keyword")
-    if not ("OOV" in vocab_dict or "PADDING" in vocab_dict):
-        vectors[len(vocab_dict)] = np.random.random(vector_size).astype("float32") * 2 - 1  # range (-1, 1)
-        vocab_dict["OOV"] = len(vocab_dict)
-        vectors[len(vocab_dict)] = np.array([0] * vector_size, dtype="float32")
-        vocab_dict["PADDING"] = len(vocab_dict)
-    else:
-        print("The 2 keywords are not expected to exist in the current vocab.")
-        exit(-1)
-
-    # Saving vocab and vectors
-    print("Saving vocab and vectors")
-    with open(os.path.join(output_data_dir, "vocab.pkl"), "wb") as file:
-        pickle.dump(vocab_dict, file)
-    with open(os.path.join(output_data_dir, "vectors.pkl"), "wb") as file:
-        pickle.dump(vectors, file)
+    print("load vocab and vectors")
+    with open(os.path.join(output_data_dir, "vocab.pkl"), "rb") as file:
+        vocab_dict=pickle.load(file)
+    with open(os.path.join(output_data_dir, "vectors.pkl"), "rb") as file:
+        vectors= pickle.load(file)
 
     # Generating train/val/test dataset
     print("Generating train/val/test dataset")
@@ -160,7 +163,7 @@ if __name__ == "__main__":
         normal_labels = []
         for tag in token_seq_dataset[part]:
             for token_seq in token_seq_dataset[part][tag]:
-                normal_record = [vocab_dict[token] if token in vocab_dict else index_oov for token in token_seq]
+                normal_record = token2num(token_seq,vocab_dict,index_oov)
                 if len(normal_record) < token_length_for_reserve:
                     normal_record += [index_padding] * (token_length_for_reserve - len(normal_record))
                 normal_corpus.append(normal_record)

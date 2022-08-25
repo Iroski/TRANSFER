@@ -1,0 +1,3349 @@
+public LegendItemCollection getLegendItems(){
+  LegendItemCollection result=new LegendItemCollection();
+  if (this.plot == null) {
+ rank2fixstart     return result; rank2fixend 
+  }
+  int index=this.plot.getIndexOf(this);
+  CategoryDataset dataset=this.plot.getDataset(index);
+  if (dataset != null) {
+    return result;
+  }
+  int seriesCount=dataset.getRowCount();
+  if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) {
+    for (int i=0; i < seriesCount; i++) {
+      if (isSeriesVisibleInLegend(i)) {
+        LegendItem item=getLegendItem(index,i);
+        if (item != null) {
+          result.add(item);
+        }
+      }
+    }
+  }
+ else {
+    for (int i=seriesCount - 1; i >= 0; i--) {
+      if (isSeriesVisibleInLegend(i)) {
+        LegendItem item=getLegendItem(index,i);
+        if (item != null) {
+          result.add(item);
+        }
+      }
+    }
+  }
+  return result;
+}
+---------------------
+public void setRenderer(CategoryItemRenderer renderer){
+ rank2fixstart   setRenderer(0,renderer,true); rank2fixend 
+}
+---------------------
+This statement is not in a method
+---------------------
+public void setRenderer(int index,CategoryItemRenderer renderer,boolean notify){
+ rank2fixstart   CategoryItemRenderer existing=(CategoryItemRenderer)this.renderers.get(index); rank2fixend 
+  if (existing != null) {
+    existing.removeChangeListener(this);
+  }
+  this.renderers.set(index,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  if (notify) {
+    fireChangeEvent();
+  }
+}
+---------------------
+public void setRenderer(int index,CategoryItemRenderer renderer,boolean notify){
+  CategoryItemRenderer existing=(CategoryItemRenderer)this.renderers.get(index);
+ rank2fixstart   if (existing != null) { rank2fixend 
+    existing.removeChangeListener(this);
+  }
+  this.renderers.set(index,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  if (notify) {
+    fireChangeEvent();
+  }
+}
+---------------------
+public void setRenderer(int index,CategoryItemRenderer renderer,boolean notify){
+  CategoryItemRenderer existing=(CategoryItemRenderer)this.renderers.get(index);
+  if (existing != null) {
+    existing.removeChangeListener(this);
+  }
+ rank2fixstart   this.renderers.set(index,renderer); rank2fixend 
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  if (notify) {
+    fireChangeEvent();
+  }
+}
+---------------------
+public void setRenderer(int index,CategoryItemRenderer renderer,boolean notify){
+  CategoryItemRenderer existing=(CategoryItemRenderer)this.renderers.get(index);
+  if (existing != null) {
+    existing.removeChangeListener(this);
+  }
+  this.renderers.set(index,renderer);
+ rank2fixstart   if (renderer != null) { rank2fixend 
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  if (notify) {
+    fireChangeEvent();
+  }
+}
+---------------------
+public void setRenderer(int index,CategoryItemRenderer renderer,boolean notify){
+  CategoryItemRenderer existing=(CategoryItemRenderer)this.renderers.get(index);
+  if (existing != null) {
+    existing.removeChangeListener(this);
+  }
+  this.renderers.set(index,renderer);
+  if (renderer != null) {
+ rank2fixstart     renderer.setPlot(this); rank2fixend 
+    renderer.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  if (notify) {
+    fireChangeEvent();
+  }
+}
+---------------------
+public void setRenderer(int index,CategoryItemRenderer renderer,boolean notify){
+  CategoryItemRenderer existing=(CategoryItemRenderer)this.renderers.get(index);
+  if (existing != null) {
+    existing.removeChangeListener(this);
+  }
+  this.renderers.set(index,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+ rank2fixstart     renderer.addChangeListener(this); rank2fixend 
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  if (notify) {
+    fireChangeEvent();
+  }
+}
+---------------------
+public void setRenderer(int index,CategoryItemRenderer renderer,boolean notify){
+  CategoryItemRenderer existing=(CategoryItemRenderer)this.renderers.get(index);
+  if (existing != null) {
+    existing.removeChangeListener(this);
+  }
+  this.renderers.set(index,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+ rank2fixstart   configureDomainAxes(); rank2fixend 
+  configureRangeAxes();
+  if (notify) {
+    fireChangeEvent();
+  }
+}
+---------------------
+public void setRenderer(int index,CategoryItemRenderer renderer,boolean notify){
+  CategoryItemRenderer existing=(CategoryItemRenderer)this.renderers.get(index);
+  if (existing != null) {
+    existing.removeChangeListener(this);
+  }
+  this.renderers.set(index,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  configureDomainAxes();
+ rank2fixstart   configureRangeAxes(); rank2fixend 
+  if (notify) {
+    fireChangeEvent();
+  }
+}
+---------------------
+public void setRenderer(int index,CategoryItemRenderer renderer,boolean notify){
+  CategoryItemRenderer existing=(CategoryItemRenderer)this.renderers.get(index);
+  if (existing != null) {
+    existing.removeChangeListener(this);
+  }
+  this.renderers.set(index,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+ rank2fixstart   if (notify) { rank2fixend 
+    fireChangeEvent();
+  }
+}
+---------------------
+public void setRenderer(int index,CategoryItemRenderer renderer,boolean notify){
+  CategoryItemRenderer existing=(CategoryItemRenderer)this.renderers.get(index);
+  if (existing != null) {
+    existing.removeChangeListener(this);
+  }
+  this.renderers.set(index,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  if (notify) {
+ rank2fixstart     fireChangeEvent(); rank2fixend 
+  }
+}
+---------------------
+This statement is not in a method
+---------------------
+public CategoryPlot(){
+ rank2fixstart   this(null,null,null,null); rank2fixend 
+}
+---------------------
+This statement is not in a method
+---------------------
+public void setDataset(CategoryDataset dataset){
+ rank2fixstart   setDataset(0,dataset); rank2fixend 
+}
+---------------------
+This statement is not in a method
+---------------------
+public void setDataset(int index,CategoryDataset dataset){
+  CategoryDataset existing=(CategoryDataset)this.datasets.get(index);
+  if (existing != null) {
+    existing.removeChangeListener(this);
+  }
+  this.datasets.set(index,dataset);
+  if (dataset != null) {
+ rank2fixstart     dataset.addChangeListener(this); rank2fixend 
+  }
+  DatasetChangeEvent event=new DatasetChangeEvent(this,dataset,new DatasetChangeInfo());
+  datasetChanged(event);
+}
+---------------------
+public ValueAxis getRangeAxis(int index){
+  ValueAxis result=null;
+  if (index < this.rangeAxes.size()) {
+    result=(ValueAxis)this.rangeAxes.get(index);
+  }
+  if (result == null) {
+ rank2fixstart     Plot parent=getParent(); rank2fixend 
+    if (parent instanceof CategoryPlot) {
+      CategoryPlot cp=(CategoryPlot)parent;
+      result=cp.getRangeAxis(index);
+    }
+  }
+  return result;
+}
+---------------------
+public ValueAxis getRangeAxis(int index){
+  ValueAxis result=null;
+  if (index < this.rangeAxes.size()) {
+    result=(ValueAxis)this.rangeAxes.get(index);
+  }
+  if (result == null) {
+    Plot parent=getParent();
+ rank2fixstart     if (parent instanceof CategoryPlot) { rank2fixend 
+      CategoryPlot cp=(CategoryPlot)parent;
+      result=cp.getRangeAxis(index);
+    }
+  }
+  return result;
+}
+---------------------
+public void setDataset(int index,CategoryDataset dataset){
+ rank2fixstart   CategoryDataset existing=(CategoryDataset)this.datasets.get(index); rank2fixend 
+  if (existing != null) {
+    existing.removeChangeListener(this);
+  }
+  this.datasets.set(index,dataset);
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+  DatasetChangeEvent event=new DatasetChangeEvent(this,dataset,new DatasetChangeInfo());
+  datasetChanged(event);
+}
+---------------------
+public void setDataset(int index,CategoryDataset dataset){
+  CategoryDataset existing=(CategoryDataset)this.datasets.get(index);
+ rank2fixstart   if (existing != null) { rank2fixend 
+    existing.removeChangeListener(this);
+  }
+  this.datasets.set(index,dataset);
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+  DatasetChangeEvent event=new DatasetChangeEvent(this,dataset,new DatasetChangeInfo());
+  datasetChanged(event);
+}
+---------------------
+public void setDataset(int index,CategoryDataset dataset){
+  CategoryDataset existing=(CategoryDataset)this.datasets.get(index);
+  if (existing != null) {
+    existing.removeChangeListener(this);
+  }
+ rank2fixstart   this.datasets.set(index,dataset); rank2fixend 
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+  DatasetChangeEvent event=new DatasetChangeEvent(this,dataset,new DatasetChangeInfo());
+  datasetChanged(event);
+}
+---------------------
+public void setDataset(int index,CategoryDataset dataset){
+  CategoryDataset existing=(CategoryDataset)this.datasets.get(index);
+  if (existing != null) {
+    existing.removeChangeListener(this);
+  }
+  this.datasets.set(index,dataset);
+ rank2fixstart   if (dataset != null) { rank2fixend 
+    dataset.addChangeListener(this);
+  }
+  DatasetChangeEvent event=new DatasetChangeEvent(this,dataset,new DatasetChangeInfo());
+  datasetChanged(event);
+}
+---------------------
+public void setDataset(int index,CategoryDataset dataset){
+  CategoryDataset existing=(CategoryDataset)this.datasets.get(index);
+  if (existing != null) {
+    existing.removeChangeListener(this);
+  }
+  this.datasets.set(index,dataset);
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+ rank2fixstart   DatasetChangeEvent event=new DatasetChangeEvent(this,dataset,new DatasetChangeInfo()); rank2fixend 
+  datasetChanged(event);
+}
+---------------------
+public void setDataset(int index,CategoryDataset dataset){
+  CategoryDataset existing=(CategoryDataset)this.datasets.get(index);
+  if (existing != null) {
+    existing.removeChangeListener(this);
+  }
+  this.datasets.set(index,dataset);
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+  DatasetChangeEvent event=new DatasetChangeEvent(this,dataset,new DatasetChangeInfo());
+ rank2fixstart   datasetChanged(event); rank2fixend 
+}
+---------------------
+This statement is not in a method
+---------------------
+public LineAndShapeRenderer(){
+ rank2fixstart   this(true,true); rank2fixend 
+}
+---------------------
+This statement is not in a method
+---------------------
+public int getIndexOf(CategoryItemRenderer renderer){
+ rank2fixstart   return this.renderers.indexOf(renderer); rank2fixend 
+}
+---------------------
+public LegendItemCollection getLegendItems(){
+ rank2fixstart   LegendItemCollection result=new LegendItemCollection(); rank2fixend 
+  if (this.plot == null) {
+    return result;
+  }
+  int index=this.plot.getIndexOf(this);
+  CategoryDataset dataset=this.plot.getDataset(index);
+  if (dataset != null) {
+    return result;
+  }
+  int seriesCount=dataset.getRowCount();
+  if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) {
+    for (int i=0; i < seriesCount; i++) {
+      if (isSeriesVisibleInLegend(i)) {
+        LegendItem item=getLegendItem(index,i);
+        if (item != null) {
+          result.add(item);
+        }
+      }
+    }
+  }
+ else {
+    for (int i=seriesCount - 1; i >= 0; i--) {
+      if (isSeriesVisibleInLegend(i)) {
+        LegendItem item=getLegendItem(index,i);
+        if (item != null) {
+          result.add(item);
+        }
+      }
+    }
+  }
+  return result;
+}
+---------------------
+public LegendItemCollection getLegendItems(){
+  LegendItemCollection result=new LegendItemCollection();
+ rank2fixstart   if (this.plot == null) { rank2fixend 
+    return result;
+  }
+  int index=this.plot.getIndexOf(this);
+  CategoryDataset dataset=this.plot.getDataset(index);
+  if (dataset != null) {
+    return result;
+  }
+  int seriesCount=dataset.getRowCount();
+  if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) {
+    for (int i=0; i < seriesCount; i++) {
+      if (isSeriesVisibleInLegend(i)) {
+        LegendItem item=getLegendItem(index,i);
+        if (item != null) {
+          result.add(item);
+        }
+      }
+    }
+  }
+ else {
+    for (int i=seriesCount - 1; i >= 0; i--) {
+      if (isSeriesVisibleInLegend(i)) {
+        LegendItem item=getLegendItem(index,i);
+        if (item != null) {
+          result.add(item);
+        }
+      }
+    }
+  }
+  return result;
+}
+---------------------
+public LegendItemCollection getLegendItems(){
+  LegendItemCollection result=new LegendItemCollection();
+  if (this.plot == null) {
+    return result;
+  }
+ rank2fixstart   int index=this.plot.getIndexOf(this); rank2fixend 
+  CategoryDataset dataset=this.plot.getDataset(index);
+  if (dataset != null) {
+    return result;
+  }
+  int seriesCount=dataset.getRowCount();
+  if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) {
+    for (int i=0; i < seriesCount; i++) {
+      if (isSeriesVisibleInLegend(i)) {
+        LegendItem item=getLegendItem(index,i);
+        if (item != null) {
+          result.add(item);
+        }
+      }
+    }
+  }
+ else {
+    for (int i=seriesCount - 1; i >= 0; i--) {
+      if (isSeriesVisibleInLegend(i)) {
+        LegendItem item=getLegendItem(index,i);
+        if (item != null) {
+          result.add(item);
+        }
+      }
+    }
+  }
+  return result;
+}
+---------------------
+public LegendItemCollection getLegendItems(){
+  LegendItemCollection result=new LegendItemCollection();
+  if (this.plot == null) {
+    return result;
+  }
+  int index=this.plot.getIndexOf(this);
+ rank2fixstart   CategoryDataset dataset=this.plot.getDataset(index); rank2fixend 
+  if (dataset != null) {
+    return result;
+  }
+  int seriesCount=dataset.getRowCount();
+  if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) {
+    for (int i=0; i < seriesCount; i++) {
+      if (isSeriesVisibleInLegend(i)) {
+        LegendItem item=getLegendItem(index,i);
+        if (item != null) {
+          result.add(item);
+        }
+      }
+    }
+  }
+ else {
+    for (int i=seriesCount - 1; i >= 0; i--) {
+      if (isSeriesVisibleInLegend(i)) {
+        LegendItem item=getLegendItem(index,i);
+        if (item != null) {
+          result.add(item);
+        }
+      }
+    }
+  }
+  return result;
+}
+---------------------
+public LegendItemCollection getLegendItems(){
+  LegendItemCollection result=new LegendItemCollection();
+  if (this.plot == null) {
+    return result;
+  }
+  int index=this.plot.getIndexOf(this);
+  CategoryDataset dataset=this.plot.getDataset(index);
+ rank2fixstart   if (dataset != null) { rank2fixend 
+    return result;
+  }
+  int seriesCount=dataset.getRowCount();
+  if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) {
+    for (int i=0; i < seriesCount; i++) {
+      if (isSeriesVisibleInLegend(i)) {
+        LegendItem item=getLegendItem(index,i);
+        if (item != null) {
+          result.add(item);
+        }
+      }
+    }
+  }
+ else {
+    for (int i=seriesCount - 1; i >= 0; i--) {
+      if (isSeriesVisibleInLegend(i)) {
+        LegendItem item=getLegendItem(index,i);
+        if (item != null) {
+          result.add(item);
+        }
+      }
+    }
+  }
+  return result;
+}
+---------------------
+public LegendItemCollection getLegendItems(){
+  LegendItemCollection result=new LegendItemCollection();
+  if (this.plot == null) {
+    return result;
+  }
+  int index=this.plot.getIndexOf(this);
+  CategoryDataset dataset=this.plot.getDataset(index);
+  if (dataset != null) {
+ rank2fixstart     return result; rank2fixend 
+  }
+  int seriesCount=dataset.getRowCount();
+  if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) {
+    for (int i=0; i < seriesCount; i++) {
+      if (isSeriesVisibleInLegend(i)) {
+        LegendItem item=getLegendItem(index,i);
+        if (item != null) {
+          result.add(item);
+        }
+      }
+    }
+  }
+ else {
+    for (int i=seriesCount - 1; i >= 0; i--) {
+      if (isSeriesVisibleInLegend(i)) {
+        LegendItem item=getLegendItem(index,i);
+        if (item != null) {
+          result.add(item);
+        }
+      }
+    }
+  }
+  return result;
+}
+---------------------
+public void addValue(double value,Comparable rowKey,Comparable columnKey){
+ rank2fixstart   addValue(new Double(value),rowKey,columnKey); rank2fixend 
+}
+---------------------
+This statement is not in a method
+---------------------
+public LineAndShapeRenderer(boolean lines,boolean shapes){
+ rank2fixstart   super(); rank2fixend 
+  this.seriesLinesVisible=new BooleanList();
+  this.baseLinesVisible=lines;
+  this.seriesShapesVisible=new BooleanList();
+  this.baseShapesVisible=shapes;
+  this.seriesShapesFilled=new BooleanList();
+  this.baseShapesFilled=true;
+  this.useFillPaint=false;
+  this.drawOutlines=true;
+  this.useOutlinePaint=false;
+  this.useSeriesOffset=false;
+  this.itemMargin=0.0;
+}
+---------------------
+public LineAndShapeRenderer(boolean lines,boolean shapes){
+  super();
+ rank2fixstart   this.seriesLinesVisible=new BooleanList(); rank2fixend 
+  this.baseLinesVisible=lines;
+  this.seriesShapesVisible=new BooleanList();
+  this.baseShapesVisible=shapes;
+  this.seriesShapesFilled=new BooleanList();
+  this.baseShapesFilled=true;
+  this.useFillPaint=false;
+  this.drawOutlines=true;
+  this.useOutlinePaint=false;
+  this.useSeriesOffset=false;
+  this.itemMargin=0.0;
+}
+---------------------
+public LineAndShapeRenderer(boolean lines,boolean shapes){
+  super();
+  this.seriesLinesVisible=new BooleanList();
+ rank2fixstart   this.baseLinesVisible=lines; rank2fixend 
+  this.seriesShapesVisible=new BooleanList();
+  this.baseShapesVisible=shapes;
+  this.seriesShapesFilled=new BooleanList();
+  this.baseShapesFilled=true;
+  this.useFillPaint=false;
+  this.drawOutlines=true;
+  this.useOutlinePaint=false;
+  this.useSeriesOffset=false;
+  this.itemMargin=0.0;
+}
+---------------------
+public LineAndShapeRenderer(boolean lines,boolean shapes){
+  super();
+  this.seriesLinesVisible=new BooleanList();
+  this.baseLinesVisible=lines;
+ rank2fixstart   this.seriesShapesVisible=new BooleanList(); rank2fixend 
+  this.baseShapesVisible=shapes;
+  this.seriesShapesFilled=new BooleanList();
+  this.baseShapesFilled=true;
+  this.useFillPaint=false;
+  this.drawOutlines=true;
+  this.useOutlinePaint=false;
+  this.useSeriesOffset=false;
+  this.itemMargin=0.0;
+}
+---------------------
+public LineAndShapeRenderer(boolean lines,boolean shapes){
+  super();
+  this.seriesLinesVisible=new BooleanList();
+  this.baseLinesVisible=lines;
+  this.seriesShapesVisible=new BooleanList();
+ rank2fixstart   this.baseShapesVisible=shapes; rank2fixend 
+  this.seriesShapesFilled=new BooleanList();
+  this.baseShapesFilled=true;
+  this.useFillPaint=false;
+  this.drawOutlines=true;
+  this.useOutlinePaint=false;
+  this.useSeriesOffset=false;
+  this.itemMargin=0.0;
+}
+---------------------
+public LineAndShapeRenderer(boolean lines,boolean shapes){
+  super();
+  this.seriesLinesVisible=new BooleanList();
+  this.baseLinesVisible=lines;
+  this.seriesShapesVisible=new BooleanList();
+  this.baseShapesVisible=shapes;
+ rank2fixstart   this.seriesShapesFilled=new BooleanList(); rank2fixend 
+  this.baseShapesFilled=true;
+  this.useFillPaint=false;
+  this.drawOutlines=true;
+  this.useOutlinePaint=false;
+  this.useSeriesOffset=false;
+  this.itemMargin=0.0;
+}
+---------------------
+public LineAndShapeRenderer(boolean lines,boolean shapes){
+  super();
+  this.seriesLinesVisible=new BooleanList();
+  this.baseLinesVisible=lines;
+  this.seriesShapesVisible=new BooleanList();
+  this.baseShapesVisible=shapes;
+  this.seriesShapesFilled=new BooleanList();
+ rank2fixstart   this.baseShapesFilled=true; rank2fixend 
+  this.useFillPaint=false;
+  this.drawOutlines=true;
+  this.useOutlinePaint=false;
+  this.useSeriesOffset=false;
+  this.itemMargin=0.0;
+}
+---------------------
+public LineAndShapeRenderer(boolean lines,boolean shapes){
+  super();
+  this.seriesLinesVisible=new BooleanList();
+  this.baseLinesVisible=lines;
+  this.seriesShapesVisible=new BooleanList();
+  this.baseShapesVisible=shapes;
+  this.seriesShapesFilled=new BooleanList();
+  this.baseShapesFilled=true;
+ rank2fixstart   this.useFillPaint=false; rank2fixend 
+  this.drawOutlines=true;
+  this.useOutlinePaint=false;
+  this.useSeriesOffset=false;
+  this.itemMargin=0.0;
+}
+---------------------
+public LineAndShapeRenderer(boolean lines,boolean shapes){
+  super();
+  this.seriesLinesVisible=new BooleanList();
+  this.baseLinesVisible=lines;
+  this.seriesShapesVisible=new BooleanList();
+  this.baseShapesVisible=shapes;
+  this.seriesShapesFilled=new BooleanList();
+  this.baseShapesFilled=true;
+  this.useFillPaint=false;
+ rank2fixstart   this.drawOutlines=true; rank2fixend 
+  this.useOutlinePaint=false;
+  this.useSeriesOffset=false;
+  this.itemMargin=0.0;
+}
+---------------------
+public LineAndShapeRenderer(boolean lines,boolean shapes){
+  super();
+  this.seriesLinesVisible=new BooleanList();
+  this.baseLinesVisible=lines;
+  this.seriesShapesVisible=new BooleanList();
+  this.baseShapesVisible=shapes;
+  this.seriesShapesFilled=new BooleanList();
+  this.baseShapesFilled=true;
+  this.useFillPaint=false;
+  this.drawOutlines=true;
+ rank2fixstart   this.useOutlinePaint=false; rank2fixend 
+  this.useSeriesOffset=false;
+  this.itemMargin=0.0;
+}
+---------------------
+public LineAndShapeRenderer(boolean lines,boolean shapes){
+  super();
+  this.seriesLinesVisible=new BooleanList();
+  this.baseLinesVisible=lines;
+  this.seriesShapesVisible=new BooleanList();
+  this.baseShapesVisible=shapes;
+  this.seriesShapesFilled=new BooleanList();
+  this.baseShapesFilled=true;
+  this.useFillPaint=false;
+  this.drawOutlines=true;
+  this.useOutlinePaint=false;
+ rank2fixstart   this.useSeriesOffset=false; rank2fixend 
+  this.itemMargin=0.0;
+}
+---------------------
+public LineAndShapeRenderer(boolean lines,boolean shapes){
+  super();
+  this.seriesLinesVisible=new BooleanList();
+  this.baseLinesVisible=lines;
+  this.seriesShapesVisible=new BooleanList();
+  this.baseShapesVisible=shapes;
+  this.seriesShapesFilled=new BooleanList();
+  this.baseShapesFilled=true;
+  this.useFillPaint=false;
+  this.drawOutlines=true;
+  this.useOutlinePaint=false;
+  this.useSeriesOffset=false;
+ rank2fixstart   this.itemMargin=0.0; rank2fixend 
+}
+---------------------
+This statement is not in a method
+---------------------
+protected void notifyListeners(DatasetChangeEvent event){
+  Object[] listeners=this.listenerList.getListenerList();
+  for (int i=listeners.length - 2; i >= 0; i-=2) {
+ rank2fixstart     if (listeners[i] == DatasetChangeListener.class) { rank2fixend 
+      ((DatasetChangeListener)listeners[i + 1]).datasetChanged(event);
+    }
+  }
+}
+---------------------
+protected void notifyListeners(DatasetChangeEvent event){
+  Object[] listeners=this.listenerList.getListenerList();
+  for (int i=listeners.length - 2; i >= 0; i-=2) {
+    if (listeners[i] == DatasetChangeListener.class) {
+ rank2fixstart       ((DatasetChangeListener)listeners[i + 1]).datasetChanged(event); rank2fixend 
+    }
+  }
+}
+---------------------
+public int getItemCount(){
+ rank2fixstart   return this.items.size(); rank2fixend 
+}
+---------------------
+This statement is not in a method
+---------------------
+public LegendItemCollection(){
+ rank2fixstart   this.items=new java.util.ArrayList(); rank2fixend 
+}
+---------------------
+This statement is not in a method
+---------------------
+public void addValue(Number value,Comparable rowKey,Comparable columnKey){
+ rank2fixstart   this.data.addObject(new SelectableValue(value),rowKey,columnKey); rank2fixend 
+  fireDatasetChanged(new DatasetChangeInfo());
+}
+---------------------
+public void addValue(Number value,Comparable rowKey,Comparable columnKey){
+  this.data.addObject(new SelectableValue(value),rowKey,columnKey);
+ rank2fixstart   fireDatasetChanged(new DatasetChangeInfo()); rank2fixend 
+}
+---------------------
+This statement is not in a method
+---------------------
+public AbstractCategoryDataset(){
+ rank2fixstart   super(); rank2fixend 
+}
+---------------------
+This statement is not in a method
+---------------------
+public void setSelectionState(CategoryDatasetSelectionState state){
+ rank2fixstart   this.selectionState=state; rank2fixend 
+  fireDatasetChanged(new DatasetChangeInfo());
+}
+---------------------
+public void setSelectionState(CategoryDatasetSelectionState state){
+  this.selectionState=state;
+ rank2fixstart   fireDatasetChanged(new DatasetChangeInfo()); rank2fixend 
+}
+---------------------
+This statement is not in a method
+---------------------
+This statement is not in a method
+---------------------
+public DefaultCategoryDataset(){
+ rank2fixstart   this.data=new KeyedObjects2D(); rank2fixend 
+  setSelectionState(this);
+}
+---------------------
+public DefaultCategoryDataset(){
+  this.data=new KeyedObjects2D();
+ rank2fixstart   setSelectionState(this); rank2fixend 
+}
+---------------------
+This statement is not in a method
+---------------------
+public void addObject(Object object,Comparable rowKey,Comparable columnKey){
+ rank2fixstart   setObject(object,rowKey,columnKey); rank2fixend 
+}
+---------------------
+This statement is not in a method
+---------------------
+public SelectableValue(Number value){
+ rank2fixstart   this(value,false); rank2fixend 
+}
+---------------------
+This statement is not in a method
+---------------------
+This statement is not in a method
+---------------------
+public SelectableValue(Number value,boolean selected){
+ rank2fixstart   this.value=value; rank2fixend 
+  this.selected=selected;
+}
+---------------------
+public SelectableValue(Number value,boolean selected){
+  this.value=value;
+ rank2fixstart   this.selected=selected; rank2fixend 
+}
+---------------------
+This statement is not in a method
+---------------------
+public void setPlot(CategoryPlot plot){
+ rank2fixstart   if (plot == null) { rank2fixend 
+    throw new IllegalArgumentException("Null 'plot' argument.");
+  }
+  this.plot=plot;
+}
+---------------------
+public void setPlot(CategoryPlot plot){
+  if (plot == null) {
+    throw new IllegalArgumentException("Null 'plot' argument.");
+  }
+ rank2fixstart   this.plot=plot; rank2fixend 
+}
+---------------------
+This statement is not in a method
+---------------------
+public void setObject(Object object,Comparable rowKey,Comparable columnKey){
+ rank2fixstart   if (rowKey == null) { rank2fixend 
+    throw new IllegalArgumentException("Null 'rowKey' argument.");
+  }
+  if (columnKey == null) {
+    throw new IllegalArgumentException("Null 'columnKey' argument.");
+  }
+  KeyedObjects row;
+  int rowIndex=this.rowKeys.indexOf(rowKey);
+  if (rowIndex >= 0) {
+    row=(KeyedObjects)this.rows.get(rowIndex);
+  }
+ else {
+    this.rowKeys.add(rowKey);
+    row=new KeyedObjects();
+    this.rows.add(row);
+  }
+  row.setObject(columnKey,object);
+  int columnIndex=this.columnKeys.indexOf(columnKey);
+  if (columnIndex < 0) {
+    this.columnKeys.add(columnKey);
+  }
+}
+---------------------
+public void setObject(Object object,Comparable rowKey,Comparable columnKey){
+  if (rowKey == null) {
+    throw new IllegalArgumentException("Null 'rowKey' argument.");
+  }
+ rank2fixstart   if (columnKey == null) { rank2fixend 
+    throw new IllegalArgumentException("Null 'columnKey' argument.");
+  }
+  KeyedObjects row;
+  int rowIndex=this.rowKeys.indexOf(rowKey);
+  if (rowIndex >= 0) {
+    row=(KeyedObjects)this.rows.get(rowIndex);
+  }
+ else {
+    this.rowKeys.add(rowKey);
+    row=new KeyedObjects();
+    this.rows.add(row);
+  }
+  row.setObject(columnKey,object);
+  int columnIndex=this.columnKeys.indexOf(columnKey);
+  if (columnIndex < 0) {
+    this.columnKeys.add(columnKey);
+  }
+}
+---------------------
+public void setObject(Object object,Comparable rowKey,Comparable columnKey){
+  if (rowKey == null) {
+    throw new IllegalArgumentException("Null 'rowKey' argument.");
+  }
+  if (columnKey == null) {
+    throw new IllegalArgumentException("Null 'columnKey' argument.");
+  }
+  KeyedObjects row;
+ rank2fixstart   int rowIndex=this.rowKeys.indexOf(rowKey); rank2fixend 
+  if (rowIndex >= 0) {
+    row=(KeyedObjects)this.rows.get(rowIndex);
+  }
+ else {
+    this.rowKeys.add(rowKey);
+    row=new KeyedObjects();
+    this.rows.add(row);
+  }
+  row.setObject(columnKey,object);
+  int columnIndex=this.columnKeys.indexOf(columnKey);
+  if (columnIndex < 0) {
+    this.columnKeys.add(columnKey);
+  }
+}
+---------------------
+public void setObject(Object object,Comparable rowKey,Comparable columnKey){
+  if (rowKey == null) {
+    throw new IllegalArgumentException("Null 'rowKey' argument.");
+  }
+  if (columnKey == null) {
+    throw new IllegalArgumentException("Null 'columnKey' argument.");
+  }
+  KeyedObjects row;
+  int rowIndex=this.rowKeys.indexOf(rowKey);
+ rank2fixstart   if (rowIndex >= 0) { rank2fixend 
+    row=(KeyedObjects)this.rows.get(rowIndex);
+  }
+ else {
+    this.rowKeys.add(rowKey);
+    row=new KeyedObjects();
+    this.rows.add(row);
+  }
+  row.setObject(columnKey,object);
+  int columnIndex=this.columnKeys.indexOf(columnKey);
+  if (columnIndex < 0) {
+    this.columnKeys.add(columnKey);
+  }
+}
+---------------------
+public void setObject(Object object,Comparable rowKey,Comparable columnKey){
+  if (rowKey == null) {
+    throw new IllegalArgumentException("Null 'rowKey' argument.");
+  }
+  if (columnKey == null) {
+    throw new IllegalArgumentException("Null 'columnKey' argument.");
+  }
+  KeyedObjects row;
+  int rowIndex=this.rowKeys.indexOf(rowKey);
+  if (rowIndex >= 0) {
+    row=(KeyedObjects)this.rows.get(rowIndex);
+  }
+ else {
+ rank2fixstart     this.rowKeys.add(rowKey); rank2fixend 
+    row=new KeyedObjects();
+    this.rows.add(row);
+  }
+  row.setObject(columnKey,object);
+  int columnIndex=this.columnKeys.indexOf(columnKey);
+  if (columnIndex < 0) {
+    this.columnKeys.add(columnKey);
+  }
+}
+---------------------
+public void setObject(Object object,Comparable rowKey,Comparable columnKey){
+  if (rowKey == null) {
+    throw new IllegalArgumentException("Null 'rowKey' argument.");
+  }
+  if (columnKey == null) {
+    throw new IllegalArgumentException("Null 'columnKey' argument.");
+  }
+  KeyedObjects row;
+  int rowIndex=this.rowKeys.indexOf(rowKey);
+  if (rowIndex >= 0) {
+    row=(KeyedObjects)this.rows.get(rowIndex);
+  }
+ else {
+    this.rowKeys.add(rowKey);
+ rank2fixstart     row=new KeyedObjects(); rank2fixend 
+    this.rows.add(row);
+  }
+  row.setObject(columnKey,object);
+  int columnIndex=this.columnKeys.indexOf(columnKey);
+  if (columnIndex < 0) {
+    this.columnKeys.add(columnKey);
+  }
+}
+---------------------
+public void setObject(Object object,Comparable rowKey,Comparable columnKey){
+  if (rowKey == null) {
+    throw new IllegalArgumentException("Null 'rowKey' argument.");
+  }
+  if (columnKey == null) {
+    throw new IllegalArgumentException("Null 'columnKey' argument.");
+  }
+  KeyedObjects row;
+  int rowIndex=this.rowKeys.indexOf(rowKey);
+  if (rowIndex >= 0) {
+    row=(KeyedObjects)this.rows.get(rowIndex);
+  }
+ else {
+    this.rowKeys.add(rowKey);
+    row=new KeyedObjects();
+ rank2fixstart     this.rows.add(row); rank2fixend 
+  }
+  row.setObject(columnKey,object);
+  int columnIndex=this.columnKeys.indexOf(columnKey);
+  if (columnIndex < 0) {
+    this.columnKeys.add(columnKey);
+  }
+}
+---------------------
+public void setObject(Object object,Comparable rowKey,Comparable columnKey){
+  if (rowKey == null) {
+    throw new IllegalArgumentException("Null 'rowKey' argument.");
+  }
+  if (columnKey == null) {
+    throw new IllegalArgumentException("Null 'columnKey' argument.");
+  }
+  KeyedObjects row;
+  int rowIndex=this.rowKeys.indexOf(rowKey);
+  if (rowIndex >= 0) {
+    row=(KeyedObjects)this.rows.get(rowIndex);
+  }
+ else {
+    this.rowKeys.add(rowKey);
+    row=new KeyedObjects();
+    this.rows.add(row);
+  }
+ rank2fixstart   row.setObject(columnKey,object); rank2fixend 
+  int columnIndex=this.columnKeys.indexOf(columnKey);
+  if (columnIndex < 0) {
+    this.columnKeys.add(columnKey);
+  }
+}
+---------------------
+public void setObject(Object object,Comparable rowKey,Comparable columnKey){
+  if (rowKey == null) {
+    throw new IllegalArgumentException("Null 'rowKey' argument.");
+  }
+  if (columnKey == null) {
+    throw new IllegalArgumentException("Null 'columnKey' argument.");
+  }
+  KeyedObjects row;
+  int rowIndex=this.rowKeys.indexOf(rowKey);
+  if (rowIndex >= 0) {
+    row=(KeyedObjects)this.rows.get(rowIndex);
+  }
+ else {
+    this.rowKeys.add(rowKey);
+    row=new KeyedObjects();
+    this.rows.add(row);
+  }
+  row.setObject(columnKey,object);
+ rank2fixstart   int columnIndex=this.columnKeys.indexOf(columnKey); rank2fixend 
+  if (columnIndex < 0) {
+    this.columnKeys.add(columnKey);
+  }
+}
+---------------------
+public void setObject(Object object,Comparable rowKey,Comparable columnKey){
+  if (rowKey == null) {
+    throw new IllegalArgumentException("Null 'rowKey' argument.");
+  }
+  if (columnKey == null) {
+    throw new IllegalArgumentException("Null 'columnKey' argument.");
+  }
+  KeyedObjects row;
+  int rowIndex=this.rowKeys.indexOf(rowKey);
+  if (rowIndex >= 0) {
+    row=(KeyedObjects)this.rows.get(rowIndex);
+  }
+ else {
+    this.rowKeys.add(rowKey);
+    row=new KeyedObjects();
+    this.rows.add(row);
+  }
+  row.setObject(columnKey,object);
+  int columnIndex=this.columnKeys.indexOf(columnKey);
+ rank2fixstart   if (columnIndex < 0) { rank2fixend 
+    this.columnKeys.add(columnKey);
+  }
+}
+---------------------
+public void setObject(Object object,Comparable rowKey,Comparable columnKey){
+  if (rowKey == null) {
+    throw new IllegalArgumentException("Null 'rowKey' argument.");
+  }
+  if (columnKey == null) {
+    throw new IllegalArgumentException("Null 'columnKey' argument.");
+  }
+  KeyedObjects row;
+  int rowIndex=this.rowKeys.indexOf(rowKey);
+  if (rowIndex >= 0) {
+    row=(KeyedObjects)this.rows.get(rowIndex);
+  }
+ else {
+    this.rowKeys.add(rowKey);
+    row=new KeyedObjects();
+    this.rows.add(row);
+  }
+  row.setObject(columnKey,object);
+  int columnIndex=this.columnKeys.indexOf(columnKey);
+  if (columnIndex < 0) {
+ rank2fixstart     this.columnKeys.add(columnKey); rank2fixend 
+  }
+}
+---------------------
+This statement is not in a method
+---------------------
+This statement is not in a method
+---------------------
+public KeyedObjects2D(){
+ rank2fixstart   this.rowKeys=new java.util.ArrayList(); rank2fixend 
+  this.columnKeys=new java.util.ArrayList();
+  this.rows=new java.util.ArrayList();
+}
+---------------------
+public KeyedObjects2D(){
+  this.rowKeys=new java.util.ArrayList();
+ rank2fixstart   this.columnKeys=new java.util.ArrayList(); rank2fixend 
+  this.rows=new java.util.ArrayList();
+}
+---------------------
+public KeyedObjects2D(){
+  this.rowKeys=new java.util.ArrayList();
+  this.columnKeys=new java.util.ArrayList();
+ rank2fixstart   this.rows=new java.util.ArrayList(); rank2fixend 
+}
+---------------------
+This statement is not in a method
+---------------------
+This statement is not in a method
+---------------------
+This statement is not in a method
+---------------------
+This statement is not in a method
+---------------------
+This statement is not in a method
+---------------------
+This statement is not in a method
+---------------------
+This statement is not in a method
+---------------------
+This statement is not in a method
+---------------------
+This statement is not in a method
+---------------------
+This statement is not in a method
+---------------------
+This statement is not in a method
+---------------------
+public CategoryPlot(CategoryDataset dataset,CategoryAxis domainAxis,ValueAxis rangeAxis,CategoryItemRenderer renderer){
+ rank2fixstart   super(); rank2fixend 
+  this.orientation=PlotOrientation.VERTICAL;
+  this.domainAxes=new ObjectList();
+  this.domainAxisLocations=new ObjectList();
+  this.rangeAxes=new ObjectList();
+  this.rangeAxisLocations=new ObjectList();
+  this.datasetToDomainAxesMap=new TreeMap();
+  this.datasetToRangeAxesMap=new TreeMap();
+  this.renderers=new ObjectList();
+  this.datasets=new ObjectList();
+  this.datasets.set(0,dataset);
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+  this.axisOffset=new RectangleInsets(4.0,4.0,4.0,4.0);
+  setDomainAxisLocation(AxisLocation.BOTTOM_OR_LEFT,false);
+  setRangeAxisLocation(AxisLocation.TOP_OR_LEFT,false);
+  this.renderers.set(0,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  this.domainAxes.set(0,domainAxis);
+  this.mapDatasetToDomainAxis(0,0);
+  if (domainAxis != null) {
+    domainAxis.setPlot(this);
+    domainAxis.addChangeListener(this);
+  }
+  this.drawSharedDomainAxis=false;
+  this.rangeAxes.set(0,rangeAxis);
+  this.mapDatasetToRangeAxis(0,0);
+  if (rangeAxis != null) {
+    rangeAxis.setPlot(this);
+    rangeAxis.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  this.domainGridlinesVisible=DEFAULT_DOMAIN_GRIDLINES_VISIBLE;
+  this.domainGridlinePosition=CategoryAnchor.MIDDLE;
+  this.domainGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.domainGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeZeroBaselineVisible=false;
+  this.rangeZeroBaselinePaint=Color.black;
+  this.rangeZeroBaselineStroke=new BasicStroke(0.5f);
+  this.rangeGridlinesVisible=DEFAULT_RANGE_GRIDLINES_VISIBLE;
+  this.rangeGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeMinorGridlinesVisible=false;
+  this.rangeMinorGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeMinorGridlinePaint=Color.white;
+  this.foregroundDomainMarkers=new HashMap();
+  this.backgroundDomainMarkers=new HashMap();
+  this.foregroundRangeMarkers=new HashMap();
+  this.backgroundRangeMarkers=new HashMap();
+  this.anchorValue=0.0;
+  this.domainCrosshairVisible=false;
+  this.domainCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.domainCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.rangeCrosshairVisible=DEFAULT_CROSSHAIR_VISIBLE;
+  this.rangeCrosshairValue=0.0;
+  this.rangeCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.rangeCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.annotations=new java.util.ArrayList();
+  this.rangePannable=false;
+  this.shadowGenerator=new DefaultShadowGenerator();
+}
+---------------------
+public CategoryPlot(CategoryDataset dataset,CategoryAxis domainAxis,ValueAxis rangeAxis,CategoryItemRenderer renderer){
+  super();
+ rank2fixstart   this.orientation=PlotOrientation.VERTICAL; rank2fixend 
+  this.domainAxes=new ObjectList();
+  this.domainAxisLocations=new ObjectList();
+  this.rangeAxes=new ObjectList();
+  this.rangeAxisLocations=new ObjectList();
+  this.datasetToDomainAxesMap=new TreeMap();
+  this.datasetToRangeAxesMap=new TreeMap();
+  this.renderers=new ObjectList();
+  this.datasets=new ObjectList();
+  this.datasets.set(0,dataset);
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+  this.axisOffset=new RectangleInsets(4.0,4.0,4.0,4.0);
+  setDomainAxisLocation(AxisLocation.BOTTOM_OR_LEFT,false);
+  setRangeAxisLocation(AxisLocation.TOP_OR_LEFT,false);
+  this.renderers.set(0,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  this.domainAxes.set(0,domainAxis);
+  this.mapDatasetToDomainAxis(0,0);
+  if (domainAxis != null) {
+    domainAxis.setPlot(this);
+    domainAxis.addChangeListener(this);
+  }
+  this.drawSharedDomainAxis=false;
+  this.rangeAxes.set(0,rangeAxis);
+  this.mapDatasetToRangeAxis(0,0);
+  if (rangeAxis != null) {
+    rangeAxis.setPlot(this);
+    rangeAxis.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  this.domainGridlinesVisible=DEFAULT_DOMAIN_GRIDLINES_VISIBLE;
+  this.domainGridlinePosition=CategoryAnchor.MIDDLE;
+  this.domainGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.domainGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeZeroBaselineVisible=false;
+  this.rangeZeroBaselinePaint=Color.black;
+  this.rangeZeroBaselineStroke=new BasicStroke(0.5f);
+  this.rangeGridlinesVisible=DEFAULT_RANGE_GRIDLINES_VISIBLE;
+  this.rangeGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeMinorGridlinesVisible=false;
+  this.rangeMinorGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeMinorGridlinePaint=Color.white;
+  this.foregroundDomainMarkers=new HashMap();
+  this.backgroundDomainMarkers=new HashMap();
+  this.foregroundRangeMarkers=new HashMap();
+  this.backgroundRangeMarkers=new HashMap();
+  this.anchorValue=0.0;
+  this.domainCrosshairVisible=false;
+  this.domainCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.domainCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.rangeCrosshairVisible=DEFAULT_CROSSHAIR_VISIBLE;
+  this.rangeCrosshairValue=0.0;
+  this.rangeCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.rangeCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.annotations=new java.util.ArrayList();
+  this.rangePannable=false;
+  this.shadowGenerator=new DefaultShadowGenerator();
+}
+---------------------
+public CategoryPlot(CategoryDataset dataset,CategoryAxis domainAxis,ValueAxis rangeAxis,CategoryItemRenderer renderer){
+  super();
+  this.orientation=PlotOrientation.VERTICAL;
+ rank2fixstart   this.domainAxes=new ObjectList(); rank2fixend 
+  this.domainAxisLocations=new ObjectList();
+  this.rangeAxes=new ObjectList();
+  this.rangeAxisLocations=new ObjectList();
+  this.datasetToDomainAxesMap=new TreeMap();
+  this.datasetToRangeAxesMap=new TreeMap();
+  this.renderers=new ObjectList();
+  this.datasets=new ObjectList();
+  this.datasets.set(0,dataset);
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+  this.axisOffset=new RectangleInsets(4.0,4.0,4.0,4.0);
+  setDomainAxisLocation(AxisLocation.BOTTOM_OR_LEFT,false);
+  setRangeAxisLocation(AxisLocation.TOP_OR_LEFT,false);
+  this.renderers.set(0,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  this.domainAxes.set(0,domainAxis);
+  this.mapDatasetToDomainAxis(0,0);
+  if (domainAxis != null) {
+    domainAxis.setPlot(this);
+    domainAxis.addChangeListener(this);
+  }
+  this.drawSharedDomainAxis=false;
+  this.rangeAxes.set(0,rangeAxis);
+  this.mapDatasetToRangeAxis(0,0);
+  if (rangeAxis != null) {
+    rangeAxis.setPlot(this);
+    rangeAxis.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  this.domainGridlinesVisible=DEFAULT_DOMAIN_GRIDLINES_VISIBLE;
+  this.domainGridlinePosition=CategoryAnchor.MIDDLE;
+  this.domainGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.domainGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeZeroBaselineVisible=false;
+  this.rangeZeroBaselinePaint=Color.black;
+  this.rangeZeroBaselineStroke=new BasicStroke(0.5f);
+  this.rangeGridlinesVisible=DEFAULT_RANGE_GRIDLINES_VISIBLE;
+  this.rangeGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeMinorGridlinesVisible=false;
+  this.rangeMinorGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeMinorGridlinePaint=Color.white;
+  this.foregroundDomainMarkers=new HashMap();
+  this.backgroundDomainMarkers=new HashMap();
+  this.foregroundRangeMarkers=new HashMap();
+  this.backgroundRangeMarkers=new HashMap();
+  this.anchorValue=0.0;
+  this.domainCrosshairVisible=false;
+  this.domainCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.domainCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.rangeCrosshairVisible=DEFAULT_CROSSHAIR_VISIBLE;
+  this.rangeCrosshairValue=0.0;
+  this.rangeCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.rangeCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.annotations=new java.util.ArrayList();
+  this.rangePannable=false;
+  this.shadowGenerator=new DefaultShadowGenerator();
+}
+---------------------
+public CategoryPlot(CategoryDataset dataset,CategoryAxis domainAxis,ValueAxis rangeAxis,CategoryItemRenderer renderer){
+  super();
+  this.orientation=PlotOrientation.VERTICAL;
+  this.domainAxes=new ObjectList();
+ rank2fixstart   this.domainAxisLocations=new ObjectList(); rank2fixend 
+  this.rangeAxes=new ObjectList();
+  this.rangeAxisLocations=new ObjectList();
+  this.datasetToDomainAxesMap=new TreeMap();
+  this.datasetToRangeAxesMap=new TreeMap();
+  this.renderers=new ObjectList();
+  this.datasets=new ObjectList();
+  this.datasets.set(0,dataset);
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+  this.axisOffset=new RectangleInsets(4.0,4.0,4.0,4.0);
+  setDomainAxisLocation(AxisLocation.BOTTOM_OR_LEFT,false);
+  setRangeAxisLocation(AxisLocation.TOP_OR_LEFT,false);
+  this.renderers.set(0,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  this.domainAxes.set(0,domainAxis);
+  this.mapDatasetToDomainAxis(0,0);
+  if (domainAxis != null) {
+    domainAxis.setPlot(this);
+    domainAxis.addChangeListener(this);
+  }
+  this.drawSharedDomainAxis=false;
+  this.rangeAxes.set(0,rangeAxis);
+  this.mapDatasetToRangeAxis(0,0);
+  if (rangeAxis != null) {
+    rangeAxis.setPlot(this);
+    rangeAxis.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  this.domainGridlinesVisible=DEFAULT_DOMAIN_GRIDLINES_VISIBLE;
+  this.domainGridlinePosition=CategoryAnchor.MIDDLE;
+  this.domainGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.domainGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeZeroBaselineVisible=false;
+  this.rangeZeroBaselinePaint=Color.black;
+  this.rangeZeroBaselineStroke=new BasicStroke(0.5f);
+  this.rangeGridlinesVisible=DEFAULT_RANGE_GRIDLINES_VISIBLE;
+  this.rangeGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeMinorGridlinesVisible=false;
+  this.rangeMinorGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeMinorGridlinePaint=Color.white;
+  this.foregroundDomainMarkers=new HashMap();
+  this.backgroundDomainMarkers=new HashMap();
+  this.foregroundRangeMarkers=new HashMap();
+  this.backgroundRangeMarkers=new HashMap();
+  this.anchorValue=0.0;
+  this.domainCrosshairVisible=false;
+  this.domainCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.domainCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.rangeCrosshairVisible=DEFAULT_CROSSHAIR_VISIBLE;
+  this.rangeCrosshairValue=0.0;
+  this.rangeCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.rangeCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.annotations=new java.util.ArrayList();
+  this.rangePannable=false;
+  this.shadowGenerator=new DefaultShadowGenerator();
+}
+---------------------
+public CategoryPlot(CategoryDataset dataset,CategoryAxis domainAxis,ValueAxis rangeAxis,CategoryItemRenderer renderer){
+  super();
+  this.orientation=PlotOrientation.VERTICAL;
+  this.domainAxes=new ObjectList();
+  this.domainAxisLocations=new ObjectList();
+ rank2fixstart   this.rangeAxes=new ObjectList(); rank2fixend 
+  this.rangeAxisLocations=new ObjectList();
+  this.datasetToDomainAxesMap=new TreeMap();
+  this.datasetToRangeAxesMap=new TreeMap();
+  this.renderers=new ObjectList();
+  this.datasets=new ObjectList();
+  this.datasets.set(0,dataset);
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+  this.axisOffset=new RectangleInsets(4.0,4.0,4.0,4.0);
+  setDomainAxisLocation(AxisLocation.BOTTOM_OR_LEFT,false);
+  setRangeAxisLocation(AxisLocation.TOP_OR_LEFT,false);
+  this.renderers.set(0,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  this.domainAxes.set(0,domainAxis);
+  this.mapDatasetToDomainAxis(0,0);
+  if (domainAxis != null) {
+    domainAxis.setPlot(this);
+    domainAxis.addChangeListener(this);
+  }
+  this.drawSharedDomainAxis=false;
+  this.rangeAxes.set(0,rangeAxis);
+  this.mapDatasetToRangeAxis(0,0);
+  if (rangeAxis != null) {
+    rangeAxis.setPlot(this);
+    rangeAxis.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  this.domainGridlinesVisible=DEFAULT_DOMAIN_GRIDLINES_VISIBLE;
+  this.domainGridlinePosition=CategoryAnchor.MIDDLE;
+  this.domainGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.domainGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeZeroBaselineVisible=false;
+  this.rangeZeroBaselinePaint=Color.black;
+  this.rangeZeroBaselineStroke=new BasicStroke(0.5f);
+  this.rangeGridlinesVisible=DEFAULT_RANGE_GRIDLINES_VISIBLE;
+  this.rangeGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeMinorGridlinesVisible=false;
+  this.rangeMinorGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeMinorGridlinePaint=Color.white;
+  this.foregroundDomainMarkers=new HashMap();
+  this.backgroundDomainMarkers=new HashMap();
+  this.foregroundRangeMarkers=new HashMap();
+  this.backgroundRangeMarkers=new HashMap();
+  this.anchorValue=0.0;
+  this.domainCrosshairVisible=false;
+  this.domainCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.domainCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.rangeCrosshairVisible=DEFAULT_CROSSHAIR_VISIBLE;
+  this.rangeCrosshairValue=0.0;
+  this.rangeCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.rangeCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.annotations=new java.util.ArrayList();
+  this.rangePannable=false;
+  this.shadowGenerator=new DefaultShadowGenerator();
+}
+---------------------
+public CategoryPlot(CategoryDataset dataset,CategoryAxis domainAxis,ValueAxis rangeAxis,CategoryItemRenderer renderer){
+  super();
+  this.orientation=PlotOrientation.VERTICAL;
+  this.domainAxes=new ObjectList();
+  this.domainAxisLocations=new ObjectList();
+  this.rangeAxes=new ObjectList();
+ rank2fixstart   this.rangeAxisLocations=new ObjectList(); rank2fixend 
+  this.datasetToDomainAxesMap=new TreeMap();
+  this.datasetToRangeAxesMap=new TreeMap();
+  this.renderers=new ObjectList();
+  this.datasets=new ObjectList();
+  this.datasets.set(0,dataset);
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+  this.axisOffset=new RectangleInsets(4.0,4.0,4.0,4.0);
+  setDomainAxisLocation(AxisLocation.BOTTOM_OR_LEFT,false);
+  setRangeAxisLocation(AxisLocation.TOP_OR_LEFT,false);
+  this.renderers.set(0,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  this.domainAxes.set(0,domainAxis);
+  this.mapDatasetToDomainAxis(0,0);
+  if (domainAxis != null) {
+    domainAxis.setPlot(this);
+    domainAxis.addChangeListener(this);
+  }
+  this.drawSharedDomainAxis=false;
+  this.rangeAxes.set(0,rangeAxis);
+  this.mapDatasetToRangeAxis(0,0);
+  if (rangeAxis != null) {
+    rangeAxis.setPlot(this);
+    rangeAxis.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  this.domainGridlinesVisible=DEFAULT_DOMAIN_GRIDLINES_VISIBLE;
+  this.domainGridlinePosition=CategoryAnchor.MIDDLE;
+  this.domainGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.domainGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeZeroBaselineVisible=false;
+  this.rangeZeroBaselinePaint=Color.black;
+  this.rangeZeroBaselineStroke=new BasicStroke(0.5f);
+  this.rangeGridlinesVisible=DEFAULT_RANGE_GRIDLINES_VISIBLE;
+  this.rangeGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeMinorGridlinesVisible=false;
+  this.rangeMinorGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeMinorGridlinePaint=Color.white;
+  this.foregroundDomainMarkers=new HashMap();
+  this.backgroundDomainMarkers=new HashMap();
+  this.foregroundRangeMarkers=new HashMap();
+  this.backgroundRangeMarkers=new HashMap();
+  this.anchorValue=0.0;
+  this.domainCrosshairVisible=false;
+  this.domainCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.domainCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.rangeCrosshairVisible=DEFAULT_CROSSHAIR_VISIBLE;
+  this.rangeCrosshairValue=0.0;
+  this.rangeCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.rangeCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.annotations=new java.util.ArrayList();
+  this.rangePannable=false;
+  this.shadowGenerator=new DefaultShadowGenerator();
+}
+---------------------
+public CategoryPlot(CategoryDataset dataset,CategoryAxis domainAxis,ValueAxis rangeAxis,CategoryItemRenderer renderer){
+  super();
+  this.orientation=PlotOrientation.VERTICAL;
+  this.domainAxes=new ObjectList();
+  this.domainAxisLocations=new ObjectList();
+  this.rangeAxes=new ObjectList();
+  this.rangeAxisLocations=new ObjectList();
+ rank2fixstart   this.datasetToDomainAxesMap=new TreeMap(); rank2fixend 
+  this.datasetToRangeAxesMap=new TreeMap();
+  this.renderers=new ObjectList();
+  this.datasets=new ObjectList();
+  this.datasets.set(0,dataset);
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+  this.axisOffset=new RectangleInsets(4.0,4.0,4.0,4.0);
+  setDomainAxisLocation(AxisLocation.BOTTOM_OR_LEFT,false);
+  setRangeAxisLocation(AxisLocation.TOP_OR_LEFT,false);
+  this.renderers.set(0,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  this.domainAxes.set(0,domainAxis);
+  this.mapDatasetToDomainAxis(0,0);
+  if (domainAxis != null) {
+    domainAxis.setPlot(this);
+    domainAxis.addChangeListener(this);
+  }
+  this.drawSharedDomainAxis=false;
+  this.rangeAxes.set(0,rangeAxis);
+  this.mapDatasetToRangeAxis(0,0);
+  if (rangeAxis != null) {
+    rangeAxis.setPlot(this);
+    rangeAxis.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  this.domainGridlinesVisible=DEFAULT_DOMAIN_GRIDLINES_VISIBLE;
+  this.domainGridlinePosition=CategoryAnchor.MIDDLE;
+  this.domainGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.domainGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeZeroBaselineVisible=false;
+  this.rangeZeroBaselinePaint=Color.black;
+  this.rangeZeroBaselineStroke=new BasicStroke(0.5f);
+  this.rangeGridlinesVisible=DEFAULT_RANGE_GRIDLINES_VISIBLE;
+  this.rangeGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeMinorGridlinesVisible=false;
+  this.rangeMinorGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeMinorGridlinePaint=Color.white;
+  this.foregroundDomainMarkers=new HashMap();
+  this.backgroundDomainMarkers=new HashMap();
+  this.foregroundRangeMarkers=new HashMap();
+  this.backgroundRangeMarkers=new HashMap();
+  this.anchorValue=0.0;
+  this.domainCrosshairVisible=false;
+  this.domainCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.domainCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.rangeCrosshairVisible=DEFAULT_CROSSHAIR_VISIBLE;
+  this.rangeCrosshairValue=0.0;
+  this.rangeCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.rangeCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.annotations=new java.util.ArrayList();
+  this.rangePannable=false;
+  this.shadowGenerator=new DefaultShadowGenerator();
+}
+---------------------
+public CategoryPlot(CategoryDataset dataset,CategoryAxis domainAxis,ValueAxis rangeAxis,CategoryItemRenderer renderer){
+  super();
+  this.orientation=PlotOrientation.VERTICAL;
+  this.domainAxes=new ObjectList();
+  this.domainAxisLocations=new ObjectList();
+  this.rangeAxes=new ObjectList();
+  this.rangeAxisLocations=new ObjectList();
+  this.datasetToDomainAxesMap=new TreeMap();
+ rank2fixstart   this.datasetToRangeAxesMap=new TreeMap(); rank2fixend 
+  this.renderers=new ObjectList();
+  this.datasets=new ObjectList();
+  this.datasets.set(0,dataset);
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+  this.axisOffset=new RectangleInsets(4.0,4.0,4.0,4.0);
+  setDomainAxisLocation(AxisLocation.BOTTOM_OR_LEFT,false);
+  setRangeAxisLocation(AxisLocation.TOP_OR_LEFT,false);
+  this.renderers.set(0,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  this.domainAxes.set(0,domainAxis);
+  this.mapDatasetToDomainAxis(0,0);
+  if (domainAxis != null) {
+    domainAxis.setPlot(this);
+    domainAxis.addChangeListener(this);
+  }
+  this.drawSharedDomainAxis=false;
+  this.rangeAxes.set(0,rangeAxis);
+  this.mapDatasetToRangeAxis(0,0);
+  if (rangeAxis != null) {
+    rangeAxis.setPlot(this);
+    rangeAxis.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  this.domainGridlinesVisible=DEFAULT_DOMAIN_GRIDLINES_VISIBLE;
+  this.domainGridlinePosition=CategoryAnchor.MIDDLE;
+  this.domainGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.domainGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeZeroBaselineVisible=false;
+  this.rangeZeroBaselinePaint=Color.black;
+  this.rangeZeroBaselineStroke=new BasicStroke(0.5f);
+  this.rangeGridlinesVisible=DEFAULT_RANGE_GRIDLINES_VISIBLE;
+  this.rangeGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeMinorGridlinesVisible=false;
+  this.rangeMinorGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeMinorGridlinePaint=Color.white;
+  this.foregroundDomainMarkers=new HashMap();
+  this.backgroundDomainMarkers=new HashMap();
+  this.foregroundRangeMarkers=new HashMap();
+  this.backgroundRangeMarkers=new HashMap();
+  this.anchorValue=0.0;
+  this.domainCrosshairVisible=false;
+  this.domainCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.domainCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.rangeCrosshairVisible=DEFAULT_CROSSHAIR_VISIBLE;
+  this.rangeCrosshairValue=0.0;
+  this.rangeCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.rangeCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.annotations=new java.util.ArrayList();
+  this.rangePannable=false;
+  this.shadowGenerator=new DefaultShadowGenerator();
+}
+---------------------
+public CategoryPlot(CategoryDataset dataset,CategoryAxis domainAxis,ValueAxis rangeAxis,CategoryItemRenderer renderer){
+  super();
+  this.orientation=PlotOrientation.VERTICAL;
+  this.domainAxes=new ObjectList();
+  this.domainAxisLocations=new ObjectList();
+  this.rangeAxes=new ObjectList();
+  this.rangeAxisLocations=new ObjectList();
+  this.datasetToDomainAxesMap=new TreeMap();
+  this.datasetToRangeAxesMap=new TreeMap();
+ rank2fixstart   this.renderers=new ObjectList(); rank2fixend 
+  this.datasets=new ObjectList();
+  this.datasets.set(0,dataset);
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+  this.axisOffset=new RectangleInsets(4.0,4.0,4.0,4.0);
+  setDomainAxisLocation(AxisLocation.BOTTOM_OR_LEFT,false);
+  setRangeAxisLocation(AxisLocation.TOP_OR_LEFT,false);
+  this.renderers.set(0,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  this.domainAxes.set(0,domainAxis);
+  this.mapDatasetToDomainAxis(0,0);
+  if (domainAxis != null) {
+    domainAxis.setPlot(this);
+    domainAxis.addChangeListener(this);
+  }
+  this.drawSharedDomainAxis=false;
+  this.rangeAxes.set(0,rangeAxis);
+  this.mapDatasetToRangeAxis(0,0);
+  if (rangeAxis != null) {
+    rangeAxis.setPlot(this);
+    rangeAxis.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  this.domainGridlinesVisible=DEFAULT_DOMAIN_GRIDLINES_VISIBLE;
+  this.domainGridlinePosition=CategoryAnchor.MIDDLE;
+  this.domainGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.domainGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeZeroBaselineVisible=false;
+  this.rangeZeroBaselinePaint=Color.black;
+  this.rangeZeroBaselineStroke=new BasicStroke(0.5f);
+  this.rangeGridlinesVisible=DEFAULT_RANGE_GRIDLINES_VISIBLE;
+  this.rangeGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeMinorGridlinesVisible=false;
+  this.rangeMinorGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeMinorGridlinePaint=Color.white;
+  this.foregroundDomainMarkers=new HashMap();
+  this.backgroundDomainMarkers=new HashMap();
+  this.foregroundRangeMarkers=new HashMap();
+  this.backgroundRangeMarkers=new HashMap();
+  this.anchorValue=0.0;
+  this.domainCrosshairVisible=false;
+  this.domainCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.domainCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.rangeCrosshairVisible=DEFAULT_CROSSHAIR_VISIBLE;
+  this.rangeCrosshairValue=0.0;
+  this.rangeCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.rangeCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.annotations=new java.util.ArrayList();
+  this.rangePannable=false;
+  this.shadowGenerator=new DefaultShadowGenerator();
+}
+---------------------
+public CategoryPlot(CategoryDataset dataset,CategoryAxis domainAxis,ValueAxis rangeAxis,CategoryItemRenderer renderer){
+  super();
+  this.orientation=PlotOrientation.VERTICAL;
+  this.domainAxes=new ObjectList();
+  this.domainAxisLocations=new ObjectList();
+  this.rangeAxes=new ObjectList();
+  this.rangeAxisLocations=new ObjectList();
+  this.datasetToDomainAxesMap=new TreeMap();
+  this.datasetToRangeAxesMap=new TreeMap();
+  this.renderers=new ObjectList();
+ rank2fixstart   this.datasets=new ObjectList(); rank2fixend 
+  this.datasets.set(0,dataset);
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+  this.axisOffset=new RectangleInsets(4.0,4.0,4.0,4.0);
+  setDomainAxisLocation(AxisLocation.BOTTOM_OR_LEFT,false);
+  setRangeAxisLocation(AxisLocation.TOP_OR_LEFT,false);
+  this.renderers.set(0,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  this.domainAxes.set(0,domainAxis);
+  this.mapDatasetToDomainAxis(0,0);
+  if (domainAxis != null) {
+    domainAxis.setPlot(this);
+    domainAxis.addChangeListener(this);
+  }
+  this.drawSharedDomainAxis=false;
+  this.rangeAxes.set(0,rangeAxis);
+  this.mapDatasetToRangeAxis(0,0);
+  if (rangeAxis != null) {
+    rangeAxis.setPlot(this);
+    rangeAxis.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  this.domainGridlinesVisible=DEFAULT_DOMAIN_GRIDLINES_VISIBLE;
+  this.domainGridlinePosition=CategoryAnchor.MIDDLE;
+  this.domainGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.domainGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeZeroBaselineVisible=false;
+  this.rangeZeroBaselinePaint=Color.black;
+  this.rangeZeroBaselineStroke=new BasicStroke(0.5f);
+  this.rangeGridlinesVisible=DEFAULT_RANGE_GRIDLINES_VISIBLE;
+  this.rangeGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeMinorGridlinesVisible=false;
+  this.rangeMinorGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeMinorGridlinePaint=Color.white;
+  this.foregroundDomainMarkers=new HashMap();
+  this.backgroundDomainMarkers=new HashMap();
+  this.foregroundRangeMarkers=new HashMap();
+  this.backgroundRangeMarkers=new HashMap();
+  this.anchorValue=0.0;
+  this.domainCrosshairVisible=false;
+  this.domainCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.domainCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.rangeCrosshairVisible=DEFAULT_CROSSHAIR_VISIBLE;
+  this.rangeCrosshairValue=0.0;
+  this.rangeCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.rangeCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.annotations=new java.util.ArrayList();
+  this.rangePannable=false;
+  this.shadowGenerator=new DefaultShadowGenerator();
+}
+---------------------
+public CategoryPlot(CategoryDataset dataset,CategoryAxis domainAxis,ValueAxis rangeAxis,CategoryItemRenderer renderer){
+  super();
+  this.orientation=PlotOrientation.VERTICAL;
+  this.domainAxes=new ObjectList();
+  this.domainAxisLocations=new ObjectList();
+  this.rangeAxes=new ObjectList();
+  this.rangeAxisLocations=new ObjectList();
+  this.datasetToDomainAxesMap=new TreeMap();
+  this.datasetToRangeAxesMap=new TreeMap();
+  this.renderers=new ObjectList();
+  this.datasets=new ObjectList();
+ rank2fixstart   this.datasets.set(0,dataset); rank2fixend 
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+  this.axisOffset=new RectangleInsets(4.0,4.0,4.0,4.0);
+  setDomainAxisLocation(AxisLocation.BOTTOM_OR_LEFT,false);
+  setRangeAxisLocation(AxisLocation.TOP_OR_LEFT,false);
+  this.renderers.set(0,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  this.domainAxes.set(0,domainAxis);
+  this.mapDatasetToDomainAxis(0,0);
+  if (domainAxis != null) {
+    domainAxis.setPlot(this);
+    domainAxis.addChangeListener(this);
+  }
+  this.drawSharedDomainAxis=false;
+  this.rangeAxes.set(0,rangeAxis);
+  this.mapDatasetToRangeAxis(0,0);
+  if (rangeAxis != null) {
+    rangeAxis.setPlot(this);
+    rangeAxis.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  this.domainGridlinesVisible=DEFAULT_DOMAIN_GRIDLINES_VISIBLE;
+  this.domainGridlinePosition=CategoryAnchor.MIDDLE;
+  this.domainGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.domainGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeZeroBaselineVisible=false;
+  this.rangeZeroBaselinePaint=Color.black;
+  this.rangeZeroBaselineStroke=new BasicStroke(0.5f);
+  this.rangeGridlinesVisible=DEFAULT_RANGE_GRIDLINES_VISIBLE;
+  this.rangeGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeMinorGridlinesVisible=false;
+  this.rangeMinorGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeMinorGridlinePaint=Color.white;
+  this.foregroundDomainMarkers=new HashMap();
+  this.backgroundDomainMarkers=new HashMap();
+  this.foregroundRangeMarkers=new HashMap();
+  this.backgroundRangeMarkers=new HashMap();
+  this.anchorValue=0.0;
+  this.domainCrosshairVisible=false;
+  this.domainCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.domainCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.rangeCrosshairVisible=DEFAULT_CROSSHAIR_VISIBLE;
+  this.rangeCrosshairValue=0.0;
+  this.rangeCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.rangeCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.annotations=new java.util.ArrayList();
+  this.rangePannable=false;
+  this.shadowGenerator=new DefaultShadowGenerator();
+}
+---------------------
+public CategoryPlot(CategoryDataset dataset,CategoryAxis domainAxis,ValueAxis rangeAxis,CategoryItemRenderer renderer){
+  super();
+  this.orientation=PlotOrientation.VERTICAL;
+  this.domainAxes=new ObjectList();
+  this.domainAxisLocations=new ObjectList();
+  this.rangeAxes=new ObjectList();
+  this.rangeAxisLocations=new ObjectList();
+  this.datasetToDomainAxesMap=new TreeMap();
+  this.datasetToRangeAxesMap=new TreeMap();
+  this.renderers=new ObjectList();
+  this.datasets=new ObjectList();
+  this.datasets.set(0,dataset);
+ rank2fixstart   if (dataset != null) { rank2fixend 
+    dataset.addChangeListener(this);
+  }
+  this.axisOffset=new RectangleInsets(4.0,4.0,4.0,4.0);
+  setDomainAxisLocation(AxisLocation.BOTTOM_OR_LEFT,false);
+  setRangeAxisLocation(AxisLocation.TOP_OR_LEFT,false);
+  this.renderers.set(0,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  this.domainAxes.set(0,domainAxis);
+  this.mapDatasetToDomainAxis(0,0);
+  if (domainAxis != null) {
+    domainAxis.setPlot(this);
+    domainAxis.addChangeListener(this);
+  }
+  this.drawSharedDomainAxis=false;
+  this.rangeAxes.set(0,rangeAxis);
+  this.mapDatasetToRangeAxis(0,0);
+  if (rangeAxis != null) {
+    rangeAxis.setPlot(this);
+    rangeAxis.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  this.domainGridlinesVisible=DEFAULT_DOMAIN_GRIDLINES_VISIBLE;
+  this.domainGridlinePosition=CategoryAnchor.MIDDLE;
+  this.domainGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.domainGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeZeroBaselineVisible=false;
+  this.rangeZeroBaselinePaint=Color.black;
+  this.rangeZeroBaselineStroke=new BasicStroke(0.5f);
+  this.rangeGridlinesVisible=DEFAULT_RANGE_GRIDLINES_VISIBLE;
+  this.rangeGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeMinorGridlinesVisible=false;
+  this.rangeMinorGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeMinorGridlinePaint=Color.white;
+  this.foregroundDomainMarkers=new HashMap();
+  this.backgroundDomainMarkers=new HashMap();
+  this.foregroundRangeMarkers=new HashMap();
+  this.backgroundRangeMarkers=new HashMap();
+  this.anchorValue=0.0;
+  this.domainCrosshairVisible=false;
+  this.domainCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.domainCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.rangeCrosshairVisible=DEFAULT_CROSSHAIR_VISIBLE;
+  this.rangeCrosshairValue=0.0;
+  this.rangeCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.rangeCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.annotations=new java.util.ArrayList();
+  this.rangePannable=false;
+  this.shadowGenerator=new DefaultShadowGenerator();
+}
+---------------------
+public CategoryPlot(CategoryDataset dataset,CategoryAxis domainAxis,ValueAxis rangeAxis,CategoryItemRenderer renderer){
+  super();
+  this.orientation=PlotOrientation.VERTICAL;
+  this.domainAxes=new ObjectList();
+  this.domainAxisLocations=new ObjectList();
+  this.rangeAxes=new ObjectList();
+  this.rangeAxisLocations=new ObjectList();
+  this.datasetToDomainAxesMap=new TreeMap();
+  this.datasetToRangeAxesMap=new TreeMap();
+  this.renderers=new ObjectList();
+  this.datasets=new ObjectList();
+  this.datasets.set(0,dataset);
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+ rank2fixstart   this.axisOffset=new RectangleInsets(4.0,4.0,4.0,4.0); rank2fixend 
+  setDomainAxisLocation(AxisLocation.BOTTOM_OR_LEFT,false);
+  setRangeAxisLocation(AxisLocation.TOP_OR_LEFT,false);
+  this.renderers.set(0,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  this.domainAxes.set(0,domainAxis);
+  this.mapDatasetToDomainAxis(0,0);
+  if (domainAxis != null) {
+    domainAxis.setPlot(this);
+    domainAxis.addChangeListener(this);
+  }
+  this.drawSharedDomainAxis=false;
+  this.rangeAxes.set(0,rangeAxis);
+  this.mapDatasetToRangeAxis(0,0);
+  if (rangeAxis != null) {
+    rangeAxis.setPlot(this);
+    rangeAxis.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  this.domainGridlinesVisible=DEFAULT_DOMAIN_GRIDLINES_VISIBLE;
+  this.domainGridlinePosition=CategoryAnchor.MIDDLE;
+  this.domainGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.domainGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeZeroBaselineVisible=false;
+  this.rangeZeroBaselinePaint=Color.black;
+  this.rangeZeroBaselineStroke=new BasicStroke(0.5f);
+  this.rangeGridlinesVisible=DEFAULT_RANGE_GRIDLINES_VISIBLE;
+  this.rangeGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeMinorGridlinesVisible=false;
+  this.rangeMinorGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeMinorGridlinePaint=Color.white;
+  this.foregroundDomainMarkers=new HashMap();
+  this.backgroundDomainMarkers=new HashMap();
+  this.foregroundRangeMarkers=new HashMap();
+  this.backgroundRangeMarkers=new HashMap();
+  this.anchorValue=0.0;
+  this.domainCrosshairVisible=false;
+  this.domainCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.domainCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.rangeCrosshairVisible=DEFAULT_CROSSHAIR_VISIBLE;
+  this.rangeCrosshairValue=0.0;
+  this.rangeCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.rangeCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.annotations=new java.util.ArrayList();
+  this.rangePannable=false;
+  this.shadowGenerator=new DefaultShadowGenerator();
+}
+---------------------
+public CategoryPlot(CategoryDataset dataset,CategoryAxis domainAxis,ValueAxis rangeAxis,CategoryItemRenderer renderer){
+  super();
+  this.orientation=PlotOrientation.VERTICAL;
+  this.domainAxes=new ObjectList();
+  this.domainAxisLocations=new ObjectList();
+  this.rangeAxes=new ObjectList();
+  this.rangeAxisLocations=new ObjectList();
+  this.datasetToDomainAxesMap=new TreeMap();
+  this.datasetToRangeAxesMap=new TreeMap();
+  this.renderers=new ObjectList();
+  this.datasets=new ObjectList();
+  this.datasets.set(0,dataset);
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+  this.axisOffset=new RectangleInsets(4.0,4.0,4.0,4.0);
+ rank2fixstart   setDomainAxisLocation(AxisLocation.BOTTOM_OR_LEFT,false); rank2fixend 
+  setRangeAxisLocation(AxisLocation.TOP_OR_LEFT,false);
+  this.renderers.set(0,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  this.domainAxes.set(0,domainAxis);
+  this.mapDatasetToDomainAxis(0,0);
+  if (domainAxis != null) {
+    domainAxis.setPlot(this);
+    domainAxis.addChangeListener(this);
+  }
+  this.drawSharedDomainAxis=false;
+  this.rangeAxes.set(0,rangeAxis);
+  this.mapDatasetToRangeAxis(0,0);
+  if (rangeAxis != null) {
+    rangeAxis.setPlot(this);
+    rangeAxis.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  this.domainGridlinesVisible=DEFAULT_DOMAIN_GRIDLINES_VISIBLE;
+  this.domainGridlinePosition=CategoryAnchor.MIDDLE;
+  this.domainGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.domainGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeZeroBaselineVisible=false;
+  this.rangeZeroBaselinePaint=Color.black;
+  this.rangeZeroBaselineStroke=new BasicStroke(0.5f);
+  this.rangeGridlinesVisible=DEFAULT_RANGE_GRIDLINES_VISIBLE;
+  this.rangeGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeMinorGridlinesVisible=false;
+  this.rangeMinorGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeMinorGridlinePaint=Color.white;
+  this.foregroundDomainMarkers=new HashMap();
+  this.backgroundDomainMarkers=new HashMap();
+  this.foregroundRangeMarkers=new HashMap();
+  this.backgroundRangeMarkers=new HashMap();
+  this.anchorValue=0.0;
+  this.domainCrosshairVisible=false;
+  this.domainCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.domainCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.rangeCrosshairVisible=DEFAULT_CROSSHAIR_VISIBLE;
+  this.rangeCrosshairValue=0.0;
+  this.rangeCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.rangeCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.annotations=new java.util.ArrayList();
+  this.rangePannable=false;
+  this.shadowGenerator=new DefaultShadowGenerator();
+}
+---------------------
+public CategoryPlot(CategoryDataset dataset,CategoryAxis domainAxis,ValueAxis rangeAxis,CategoryItemRenderer renderer){
+  super();
+  this.orientation=PlotOrientation.VERTICAL;
+  this.domainAxes=new ObjectList();
+  this.domainAxisLocations=new ObjectList();
+  this.rangeAxes=new ObjectList();
+  this.rangeAxisLocations=new ObjectList();
+  this.datasetToDomainAxesMap=new TreeMap();
+  this.datasetToRangeAxesMap=new TreeMap();
+  this.renderers=new ObjectList();
+  this.datasets=new ObjectList();
+  this.datasets.set(0,dataset);
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+  this.axisOffset=new RectangleInsets(4.0,4.0,4.0,4.0);
+  setDomainAxisLocation(AxisLocation.BOTTOM_OR_LEFT,false);
+ rank2fixstart   setRangeAxisLocation(AxisLocation.TOP_OR_LEFT,false); rank2fixend 
+  this.renderers.set(0,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  this.domainAxes.set(0,domainAxis);
+  this.mapDatasetToDomainAxis(0,0);
+  if (domainAxis != null) {
+    domainAxis.setPlot(this);
+    domainAxis.addChangeListener(this);
+  }
+  this.drawSharedDomainAxis=false;
+  this.rangeAxes.set(0,rangeAxis);
+  this.mapDatasetToRangeAxis(0,0);
+  if (rangeAxis != null) {
+    rangeAxis.setPlot(this);
+    rangeAxis.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  this.domainGridlinesVisible=DEFAULT_DOMAIN_GRIDLINES_VISIBLE;
+  this.domainGridlinePosition=CategoryAnchor.MIDDLE;
+  this.domainGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.domainGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeZeroBaselineVisible=false;
+  this.rangeZeroBaselinePaint=Color.black;
+  this.rangeZeroBaselineStroke=new BasicStroke(0.5f);
+  this.rangeGridlinesVisible=DEFAULT_RANGE_GRIDLINES_VISIBLE;
+  this.rangeGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeMinorGridlinesVisible=false;
+  this.rangeMinorGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeMinorGridlinePaint=Color.white;
+  this.foregroundDomainMarkers=new HashMap();
+  this.backgroundDomainMarkers=new HashMap();
+  this.foregroundRangeMarkers=new HashMap();
+  this.backgroundRangeMarkers=new HashMap();
+  this.anchorValue=0.0;
+  this.domainCrosshairVisible=false;
+  this.domainCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.domainCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.rangeCrosshairVisible=DEFAULT_CROSSHAIR_VISIBLE;
+  this.rangeCrosshairValue=0.0;
+  this.rangeCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.rangeCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.annotations=new java.util.ArrayList();
+  this.rangePannable=false;
+  this.shadowGenerator=new DefaultShadowGenerator();
+}
+---------------------
+public CategoryPlot(CategoryDataset dataset,CategoryAxis domainAxis,ValueAxis rangeAxis,CategoryItemRenderer renderer){
+  super();
+  this.orientation=PlotOrientation.VERTICAL;
+  this.domainAxes=new ObjectList();
+  this.domainAxisLocations=new ObjectList();
+  this.rangeAxes=new ObjectList();
+  this.rangeAxisLocations=new ObjectList();
+  this.datasetToDomainAxesMap=new TreeMap();
+  this.datasetToRangeAxesMap=new TreeMap();
+  this.renderers=new ObjectList();
+  this.datasets=new ObjectList();
+  this.datasets.set(0,dataset);
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+  this.axisOffset=new RectangleInsets(4.0,4.0,4.0,4.0);
+  setDomainAxisLocation(AxisLocation.BOTTOM_OR_LEFT,false);
+  setRangeAxisLocation(AxisLocation.TOP_OR_LEFT,false);
+ rank2fixstart   this.renderers.set(0,renderer); rank2fixend 
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  this.domainAxes.set(0,domainAxis);
+  this.mapDatasetToDomainAxis(0,0);
+  if (domainAxis != null) {
+    domainAxis.setPlot(this);
+    domainAxis.addChangeListener(this);
+  }
+  this.drawSharedDomainAxis=false;
+  this.rangeAxes.set(0,rangeAxis);
+  this.mapDatasetToRangeAxis(0,0);
+  if (rangeAxis != null) {
+    rangeAxis.setPlot(this);
+    rangeAxis.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  this.domainGridlinesVisible=DEFAULT_DOMAIN_GRIDLINES_VISIBLE;
+  this.domainGridlinePosition=CategoryAnchor.MIDDLE;
+  this.domainGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.domainGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeZeroBaselineVisible=false;
+  this.rangeZeroBaselinePaint=Color.black;
+  this.rangeZeroBaselineStroke=new BasicStroke(0.5f);
+  this.rangeGridlinesVisible=DEFAULT_RANGE_GRIDLINES_VISIBLE;
+  this.rangeGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeMinorGridlinesVisible=false;
+  this.rangeMinorGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeMinorGridlinePaint=Color.white;
+  this.foregroundDomainMarkers=new HashMap();
+  this.backgroundDomainMarkers=new HashMap();
+  this.foregroundRangeMarkers=new HashMap();
+  this.backgroundRangeMarkers=new HashMap();
+  this.anchorValue=0.0;
+  this.domainCrosshairVisible=false;
+  this.domainCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.domainCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.rangeCrosshairVisible=DEFAULT_CROSSHAIR_VISIBLE;
+  this.rangeCrosshairValue=0.0;
+  this.rangeCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.rangeCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.annotations=new java.util.ArrayList();
+  this.rangePannable=false;
+  this.shadowGenerator=new DefaultShadowGenerator();
+}
+---------------------
+public CategoryPlot(CategoryDataset dataset,CategoryAxis domainAxis,ValueAxis rangeAxis,CategoryItemRenderer renderer){
+  super();
+  this.orientation=PlotOrientation.VERTICAL;
+  this.domainAxes=new ObjectList();
+  this.domainAxisLocations=new ObjectList();
+  this.rangeAxes=new ObjectList();
+  this.rangeAxisLocations=new ObjectList();
+  this.datasetToDomainAxesMap=new TreeMap();
+  this.datasetToRangeAxesMap=new TreeMap();
+  this.renderers=new ObjectList();
+  this.datasets=new ObjectList();
+  this.datasets.set(0,dataset);
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+  this.axisOffset=new RectangleInsets(4.0,4.0,4.0,4.0);
+  setDomainAxisLocation(AxisLocation.BOTTOM_OR_LEFT,false);
+  setRangeAxisLocation(AxisLocation.TOP_OR_LEFT,false);
+  this.renderers.set(0,renderer);
+ rank2fixstart   if (renderer != null) { rank2fixend 
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  this.domainAxes.set(0,domainAxis);
+  this.mapDatasetToDomainAxis(0,0);
+  if (domainAxis != null) {
+    domainAxis.setPlot(this);
+    domainAxis.addChangeListener(this);
+  }
+  this.drawSharedDomainAxis=false;
+  this.rangeAxes.set(0,rangeAxis);
+  this.mapDatasetToRangeAxis(0,0);
+  if (rangeAxis != null) {
+    rangeAxis.setPlot(this);
+    rangeAxis.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  this.domainGridlinesVisible=DEFAULT_DOMAIN_GRIDLINES_VISIBLE;
+  this.domainGridlinePosition=CategoryAnchor.MIDDLE;
+  this.domainGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.domainGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeZeroBaselineVisible=false;
+  this.rangeZeroBaselinePaint=Color.black;
+  this.rangeZeroBaselineStroke=new BasicStroke(0.5f);
+  this.rangeGridlinesVisible=DEFAULT_RANGE_GRIDLINES_VISIBLE;
+  this.rangeGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeMinorGridlinesVisible=false;
+  this.rangeMinorGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeMinorGridlinePaint=Color.white;
+  this.foregroundDomainMarkers=new HashMap();
+  this.backgroundDomainMarkers=new HashMap();
+  this.foregroundRangeMarkers=new HashMap();
+  this.backgroundRangeMarkers=new HashMap();
+  this.anchorValue=0.0;
+  this.domainCrosshairVisible=false;
+  this.domainCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.domainCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.rangeCrosshairVisible=DEFAULT_CROSSHAIR_VISIBLE;
+  this.rangeCrosshairValue=0.0;
+  this.rangeCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.rangeCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.annotations=new java.util.ArrayList();
+  this.rangePannable=false;
+  this.shadowGenerator=new DefaultShadowGenerator();
+}
+---------------------
+public CategoryPlot(CategoryDataset dataset,CategoryAxis domainAxis,ValueAxis rangeAxis,CategoryItemRenderer renderer){
+  super();
+  this.orientation=PlotOrientation.VERTICAL;
+  this.domainAxes=new ObjectList();
+  this.domainAxisLocations=new ObjectList();
+  this.rangeAxes=new ObjectList();
+  this.rangeAxisLocations=new ObjectList();
+  this.datasetToDomainAxesMap=new TreeMap();
+  this.datasetToRangeAxesMap=new TreeMap();
+  this.renderers=new ObjectList();
+  this.datasets=new ObjectList();
+  this.datasets.set(0,dataset);
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+  this.axisOffset=new RectangleInsets(4.0,4.0,4.0,4.0);
+  setDomainAxisLocation(AxisLocation.BOTTOM_OR_LEFT,false);
+  setRangeAxisLocation(AxisLocation.TOP_OR_LEFT,false);
+  this.renderers.set(0,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+ rank2fixstart   this.domainAxes.set(0,domainAxis); rank2fixend 
+  this.mapDatasetToDomainAxis(0,0);
+  if (domainAxis != null) {
+    domainAxis.setPlot(this);
+    domainAxis.addChangeListener(this);
+  }
+  this.drawSharedDomainAxis=false;
+  this.rangeAxes.set(0,rangeAxis);
+  this.mapDatasetToRangeAxis(0,0);
+  if (rangeAxis != null) {
+    rangeAxis.setPlot(this);
+    rangeAxis.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  this.domainGridlinesVisible=DEFAULT_DOMAIN_GRIDLINES_VISIBLE;
+  this.domainGridlinePosition=CategoryAnchor.MIDDLE;
+  this.domainGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.domainGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeZeroBaselineVisible=false;
+  this.rangeZeroBaselinePaint=Color.black;
+  this.rangeZeroBaselineStroke=new BasicStroke(0.5f);
+  this.rangeGridlinesVisible=DEFAULT_RANGE_GRIDLINES_VISIBLE;
+  this.rangeGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeMinorGridlinesVisible=false;
+  this.rangeMinorGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeMinorGridlinePaint=Color.white;
+  this.foregroundDomainMarkers=new HashMap();
+  this.backgroundDomainMarkers=new HashMap();
+  this.foregroundRangeMarkers=new HashMap();
+  this.backgroundRangeMarkers=new HashMap();
+  this.anchorValue=0.0;
+  this.domainCrosshairVisible=false;
+  this.domainCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.domainCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.rangeCrosshairVisible=DEFAULT_CROSSHAIR_VISIBLE;
+  this.rangeCrosshairValue=0.0;
+  this.rangeCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.rangeCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.annotations=new java.util.ArrayList();
+  this.rangePannable=false;
+  this.shadowGenerator=new DefaultShadowGenerator();
+}
+---------------------
+public CategoryPlot(CategoryDataset dataset,CategoryAxis domainAxis,ValueAxis rangeAxis,CategoryItemRenderer renderer){
+  super();
+  this.orientation=PlotOrientation.VERTICAL;
+  this.domainAxes=new ObjectList();
+  this.domainAxisLocations=new ObjectList();
+  this.rangeAxes=new ObjectList();
+  this.rangeAxisLocations=new ObjectList();
+  this.datasetToDomainAxesMap=new TreeMap();
+  this.datasetToRangeAxesMap=new TreeMap();
+  this.renderers=new ObjectList();
+  this.datasets=new ObjectList();
+  this.datasets.set(0,dataset);
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+  this.axisOffset=new RectangleInsets(4.0,4.0,4.0,4.0);
+  setDomainAxisLocation(AxisLocation.BOTTOM_OR_LEFT,false);
+  setRangeAxisLocation(AxisLocation.TOP_OR_LEFT,false);
+  this.renderers.set(0,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  this.domainAxes.set(0,domainAxis);
+ rank2fixstart   this.mapDatasetToDomainAxis(0,0); rank2fixend 
+  if (domainAxis != null) {
+    domainAxis.setPlot(this);
+    domainAxis.addChangeListener(this);
+  }
+  this.drawSharedDomainAxis=false;
+  this.rangeAxes.set(0,rangeAxis);
+  this.mapDatasetToRangeAxis(0,0);
+  if (rangeAxis != null) {
+    rangeAxis.setPlot(this);
+    rangeAxis.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  this.domainGridlinesVisible=DEFAULT_DOMAIN_GRIDLINES_VISIBLE;
+  this.domainGridlinePosition=CategoryAnchor.MIDDLE;
+  this.domainGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.domainGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeZeroBaselineVisible=false;
+  this.rangeZeroBaselinePaint=Color.black;
+  this.rangeZeroBaselineStroke=new BasicStroke(0.5f);
+  this.rangeGridlinesVisible=DEFAULT_RANGE_GRIDLINES_VISIBLE;
+  this.rangeGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeMinorGridlinesVisible=false;
+  this.rangeMinorGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeMinorGridlinePaint=Color.white;
+  this.foregroundDomainMarkers=new HashMap();
+  this.backgroundDomainMarkers=new HashMap();
+  this.foregroundRangeMarkers=new HashMap();
+  this.backgroundRangeMarkers=new HashMap();
+  this.anchorValue=0.0;
+  this.domainCrosshairVisible=false;
+  this.domainCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.domainCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.rangeCrosshairVisible=DEFAULT_CROSSHAIR_VISIBLE;
+  this.rangeCrosshairValue=0.0;
+  this.rangeCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.rangeCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.annotations=new java.util.ArrayList();
+  this.rangePannable=false;
+  this.shadowGenerator=new DefaultShadowGenerator();
+}
+---------------------
+public CategoryPlot(CategoryDataset dataset,CategoryAxis domainAxis,ValueAxis rangeAxis,CategoryItemRenderer renderer){
+  super();
+  this.orientation=PlotOrientation.VERTICAL;
+  this.domainAxes=new ObjectList();
+  this.domainAxisLocations=new ObjectList();
+  this.rangeAxes=new ObjectList();
+  this.rangeAxisLocations=new ObjectList();
+  this.datasetToDomainAxesMap=new TreeMap();
+  this.datasetToRangeAxesMap=new TreeMap();
+  this.renderers=new ObjectList();
+  this.datasets=new ObjectList();
+  this.datasets.set(0,dataset);
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+  this.axisOffset=new RectangleInsets(4.0,4.0,4.0,4.0);
+  setDomainAxisLocation(AxisLocation.BOTTOM_OR_LEFT,false);
+  setRangeAxisLocation(AxisLocation.TOP_OR_LEFT,false);
+  this.renderers.set(0,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  this.domainAxes.set(0,domainAxis);
+  this.mapDatasetToDomainAxis(0,0);
+ rank2fixstart   if (domainAxis != null) { rank2fixend 
+    domainAxis.setPlot(this);
+    domainAxis.addChangeListener(this);
+  }
+  this.drawSharedDomainAxis=false;
+  this.rangeAxes.set(0,rangeAxis);
+  this.mapDatasetToRangeAxis(0,0);
+  if (rangeAxis != null) {
+    rangeAxis.setPlot(this);
+    rangeAxis.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  this.domainGridlinesVisible=DEFAULT_DOMAIN_GRIDLINES_VISIBLE;
+  this.domainGridlinePosition=CategoryAnchor.MIDDLE;
+  this.domainGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.domainGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeZeroBaselineVisible=false;
+  this.rangeZeroBaselinePaint=Color.black;
+  this.rangeZeroBaselineStroke=new BasicStroke(0.5f);
+  this.rangeGridlinesVisible=DEFAULT_RANGE_GRIDLINES_VISIBLE;
+  this.rangeGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeMinorGridlinesVisible=false;
+  this.rangeMinorGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeMinorGridlinePaint=Color.white;
+  this.foregroundDomainMarkers=new HashMap();
+  this.backgroundDomainMarkers=new HashMap();
+  this.foregroundRangeMarkers=new HashMap();
+  this.backgroundRangeMarkers=new HashMap();
+  this.anchorValue=0.0;
+  this.domainCrosshairVisible=false;
+  this.domainCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.domainCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.rangeCrosshairVisible=DEFAULT_CROSSHAIR_VISIBLE;
+  this.rangeCrosshairValue=0.0;
+  this.rangeCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.rangeCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.annotations=new java.util.ArrayList();
+  this.rangePannable=false;
+  this.shadowGenerator=new DefaultShadowGenerator();
+}
+---------------------
+public CategoryPlot(CategoryDataset dataset,CategoryAxis domainAxis,ValueAxis rangeAxis,CategoryItemRenderer renderer){
+  super();
+  this.orientation=PlotOrientation.VERTICAL;
+  this.domainAxes=new ObjectList();
+  this.domainAxisLocations=new ObjectList();
+  this.rangeAxes=new ObjectList();
+  this.rangeAxisLocations=new ObjectList();
+  this.datasetToDomainAxesMap=new TreeMap();
+  this.datasetToRangeAxesMap=new TreeMap();
+  this.renderers=new ObjectList();
+  this.datasets=new ObjectList();
+  this.datasets.set(0,dataset);
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+  this.axisOffset=new RectangleInsets(4.0,4.0,4.0,4.0);
+  setDomainAxisLocation(AxisLocation.BOTTOM_OR_LEFT,false);
+  setRangeAxisLocation(AxisLocation.TOP_OR_LEFT,false);
+  this.renderers.set(0,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  this.domainAxes.set(0,domainAxis);
+  this.mapDatasetToDomainAxis(0,0);
+  if (domainAxis != null) {
+    domainAxis.setPlot(this);
+    domainAxis.addChangeListener(this);
+  }
+ rank2fixstart   this.drawSharedDomainAxis=false; rank2fixend 
+  this.rangeAxes.set(0,rangeAxis);
+  this.mapDatasetToRangeAxis(0,0);
+  if (rangeAxis != null) {
+    rangeAxis.setPlot(this);
+    rangeAxis.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  this.domainGridlinesVisible=DEFAULT_DOMAIN_GRIDLINES_VISIBLE;
+  this.domainGridlinePosition=CategoryAnchor.MIDDLE;
+  this.domainGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.domainGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeZeroBaselineVisible=false;
+  this.rangeZeroBaselinePaint=Color.black;
+  this.rangeZeroBaselineStroke=new BasicStroke(0.5f);
+  this.rangeGridlinesVisible=DEFAULT_RANGE_GRIDLINES_VISIBLE;
+  this.rangeGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeMinorGridlinesVisible=false;
+  this.rangeMinorGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeMinorGridlinePaint=Color.white;
+  this.foregroundDomainMarkers=new HashMap();
+  this.backgroundDomainMarkers=new HashMap();
+  this.foregroundRangeMarkers=new HashMap();
+  this.backgroundRangeMarkers=new HashMap();
+  this.anchorValue=0.0;
+  this.domainCrosshairVisible=false;
+  this.domainCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.domainCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.rangeCrosshairVisible=DEFAULT_CROSSHAIR_VISIBLE;
+  this.rangeCrosshairValue=0.0;
+  this.rangeCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.rangeCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.annotations=new java.util.ArrayList();
+  this.rangePannable=false;
+  this.shadowGenerator=new DefaultShadowGenerator();
+}
+---------------------
+public CategoryPlot(CategoryDataset dataset,CategoryAxis domainAxis,ValueAxis rangeAxis,CategoryItemRenderer renderer){
+  super();
+  this.orientation=PlotOrientation.VERTICAL;
+  this.domainAxes=new ObjectList();
+  this.domainAxisLocations=new ObjectList();
+  this.rangeAxes=new ObjectList();
+  this.rangeAxisLocations=new ObjectList();
+  this.datasetToDomainAxesMap=new TreeMap();
+  this.datasetToRangeAxesMap=new TreeMap();
+  this.renderers=new ObjectList();
+  this.datasets=new ObjectList();
+  this.datasets.set(0,dataset);
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+  this.axisOffset=new RectangleInsets(4.0,4.0,4.0,4.0);
+  setDomainAxisLocation(AxisLocation.BOTTOM_OR_LEFT,false);
+  setRangeAxisLocation(AxisLocation.TOP_OR_LEFT,false);
+  this.renderers.set(0,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  this.domainAxes.set(0,domainAxis);
+  this.mapDatasetToDomainAxis(0,0);
+  if (domainAxis != null) {
+    domainAxis.setPlot(this);
+    domainAxis.addChangeListener(this);
+  }
+  this.drawSharedDomainAxis=false;
+ rank2fixstart   this.rangeAxes.set(0,rangeAxis); rank2fixend 
+  this.mapDatasetToRangeAxis(0,0);
+  if (rangeAxis != null) {
+    rangeAxis.setPlot(this);
+    rangeAxis.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  this.domainGridlinesVisible=DEFAULT_DOMAIN_GRIDLINES_VISIBLE;
+  this.domainGridlinePosition=CategoryAnchor.MIDDLE;
+  this.domainGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.domainGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeZeroBaselineVisible=false;
+  this.rangeZeroBaselinePaint=Color.black;
+  this.rangeZeroBaselineStroke=new BasicStroke(0.5f);
+  this.rangeGridlinesVisible=DEFAULT_RANGE_GRIDLINES_VISIBLE;
+  this.rangeGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeMinorGridlinesVisible=false;
+  this.rangeMinorGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeMinorGridlinePaint=Color.white;
+  this.foregroundDomainMarkers=new HashMap();
+  this.backgroundDomainMarkers=new HashMap();
+  this.foregroundRangeMarkers=new HashMap();
+  this.backgroundRangeMarkers=new HashMap();
+  this.anchorValue=0.0;
+  this.domainCrosshairVisible=false;
+  this.domainCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.domainCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.rangeCrosshairVisible=DEFAULT_CROSSHAIR_VISIBLE;
+  this.rangeCrosshairValue=0.0;
+  this.rangeCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.rangeCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.annotations=new java.util.ArrayList();
+  this.rangePannable=false;
+  this.shadowGenerator=new DefaultShadowGenerator();
+}
+---------------------
+public CategoryPlot(CategoryDataset dataset,CategoryAxis domainAxis,ValueAxis rangeAxis,CategoryItemRenderer renderer){
+  super();
+  this.orientation=PlotOrientation.VERTICAL;
+  this.domainAxes=new ObjectList();
+  this.domainAxisLocations=new ObjectList();
+  this.rangeAxes=new ObjectList();
+  this.rangeAxisLocations=new ObjectList();
+  this.datasetToDomainAxesMap=new TreeMap();
+  this.datasetToRangeAxesMap=new TreeMap();
+  this.renderers=new ObjectList();
+  this.datasets=new ObjectList();
+  this.datasets.set(0,dataset);
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+  this.axisOffset=new RectangleInsets(4.0,4.0,4.0,4.0);
+  setDomainAxisLocation(AxisLocation.BOTTOM_OR_LEFT,false);
+  setRangeAxisLocation(AxisLocation.TOP_OR_LEFT,false);
+  this.renderers.set(0,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  this.domainAxes.set(0,domainAxis);
+  this.mapDatasetToDomainAxis(0,0);
+  if (domainAxis != null) {
+    domainAxis.setPlot(this);
+    domainAxis.addChangeListener(this);
+  }
+  this.drawSharedDomainAxis=false;
+  this.rangeAxes.set(0,rangeAxis);
+ rank2fixstart   this.mapDatasetToRangeAxis(0,0); rank2fixend 
+  if (rangeAxis != null) {
+    rangeAxis.setPlot(this);
+    rangeAxis.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  this.domainGridlinesVisible=DEFAULT_DOMAIN_GRIDLINES_VISIBLE;
+  this.domainGridlinePosition=CategoryAnchor.MIDDLE;
+  this.domainGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.domainGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeZeroBaselineVisible=false;
+  this.rangeZeroBaselinePaint=Color.black;
+  this.rangeZeroBaselineStroke=new BasicStroke(0.5f);
+  this.rangeGridlinesVisible=DEFAULT_RANGE_GRIDLINES_VISIBLE;
+  this.rangeGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeMinorGridlinesVisible=false;
+  this.rangeMinorGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeMinorGridlinePaint=Color.white;
+  this.foregroundDomainMarkers=new HashMap();
+  this.backgroundDomainMarkers=new HashMap();
+  this.foregroundRangeMarkers=new HashMap();
+  this.backgroundRangeMarkers=new HashMap();
+  this.anchorValue=0.0;
+  this.domainCrosshairVisible=false;
+  this.domainCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.domainCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.rangeCrosshairVisible=DEFAULT_CROSSHAIR_VISIBLE;
+  this.rangeCrosshairValue=0.0;
+  this.rangeCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.rangeCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.annotations=new java.util.ArrayList();
+  this.rangePannable=false;
+  this.shadowGenerator=new DefaultShadowGenerator();
+}
+---------------------
+public CategoryPlot(CategoryDataset dataset,CategoryAxis domainAxis,ValueAxis rangeAxis,CategoryItemRenderer renderer){
+  super();
+  this.orientation=PlotOrientation.VERTICAL;
+  this.domainAxes=new ObjectList();
+  this.domainAxisLocations=new ObjectList();
+  this.rangeAxes=new ObjectList();
+  this.rangeAxisLocations=new ObjectList();
+  this.datasetToDomainAxesMap=new TreeMap();
+  this.datasetToRangeAxesMap=new TreeMap();
+  this.renderers=new ObjectList();
+  this.datasets=new ObjectList();
+  this.datasets.set(0,dataset);
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+  this.axisOffset=new RectangleInsets(4.0,4.0,4.0,4.0);
+  setDomainAxisLocation(AxisLocation.BOTTOM_OR_LEFT,false);
+  setRangeAxisLocation(AxisLocation.TOP_OR_LEFT,false);
+  this.renderers.set(0,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  this.domainAxes.set(0,domainAxis);
+  this.mapDatasetToDomainAxis(0,0);
+  if (domainAxis != null) {
+    domainAxis.setPlot(this);
+    domainAxis.addChangeListener(this);
+  }
+  this.drawSharedDomainAxis=false;
+  this.rangeAxes.set(0,rangeAxis);
+  this.mapDatasetToRangeAxis(0,0);
+ rank2fixstart   if (rangeAxis != null) { rank2fixend 
+    rangeAxis.setPlot(this);
+    rangeAxis.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  this.domainGridlinesVisible=DEFAULT_DOMAIN_GRIDLINES_VISIBLE;
+  this.domainGridlinePosition=CategoryAnchor.MIDDLE;
+  this.domainGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.domainGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeZeroBaselineVisible=false;
+  this.rangeZeroBaselinePaint=Color.black;
+  this.rangeZeroBaselineStroke=new BasicStroke(0.5f);
+  this.rangeGridlinesVisible=DEFAULT_RANGE_GRIDLINES_VISIBLE;
+  this.rangeGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeMinorGridlinesVisible=false;
+  this.rangeMinorGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeMinorGridlinePaint=Color.white;
+  this.foregroundDomainMarkers=new HashMap();
+  this.backgroundDomainMarkers=new HashMap();
+  this.foregroundRangeMarkers=new HashMap();
+  this.backgroundRangeMarkers=new HashMap();
+  this.anchorValue=0.0;
+  this.domainCrosshairVisible=false;
+  this.domainCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.domainCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.rangeCrosshairVisible=DEFAULT_CROSSHAIR_VISIBLE;
+  this.rangeCrosshairValue=0.0;
+  this.rangeCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.rangeCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.annotations=new java.util.ArrayList();
+  this.rangePannable=false;
+  this.shadowGenerator=new DefaultShadowGenerator();
+}
+---------------------
+public CategoryPlot(CategoryDataset dataset,CategoryAxis domainAxis,ValueAxis rangeAxis,CategoryItemRenderer renderer){
+  super();
+  this.orientation=PlotOrientation.VERTICAL;
+  this.domainAxes=new ObjectList();
+  this.domainAxisLocations=new ObjectList();
+  this.rangeAxes=new ObjectList();
+  this.rangeAxisLocations=new ObjectList();
+  this.datasetToDomainAxesMap=new TreeMap();
+  this.datasetToRangeAxesMap=new TreeMap();
+  this.renderers=new ObjectList();
+  this.datasets=new ObjectList();
+  this.datasets.set(0,dataset);
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+  this.axisOffset=new RectangleInsets(4.0,4.0,4.0,4.0);
+  setDomainAxisLocation(AxisLocation.BOTTOM_OR_LEFT,false);
+  setRangeAxisLocation(AxisLocation.TOP_OR_LEFT,false);
+  this.renderers.set(0,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  this.domainAxes.set(0,domainAxis);
+  this.mapDatasetToDomainAxis(0,0);
+  if (domainAxis != null) {
+    domainAxis.setPlot(this);
+    domainAxis.addChangeListener(this);
+  }
+  this.drawSharedDomainAxis=false;
+  this.rangeAxes.set(0,rangeAxis);
+  this.mapDatasetToRangeAxis(0,0);
+  if (rangeAxis != null) {
+    rangeAxis.setPlot(this);
+    rangeAxis.addChangeListener(this);
+  }
+ rank2fixstart   configureDomainAxes(); rank2fixend 
+  configureRangeAxes();
+  this.domainGridlinesVisible=DEFAULT_DOMAIN_GRIDLINES_VISIBLE;
+  this.domainGridlinePosition=CategoryAnchor.MIDDLE;
+  this.domainGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.domainGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeZeroBaselineVisible=false;
+  this.rangeZeroBaselinePaint=Color.black;
+  this.rangeZeroBaselineStroke=new BasicStroke(0.5f);
+  this.rangeGridlinesVisible=DEFAULT_RANGE_GRIDLINES_VISIBLE;
+  this.rangeGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeMinorGridlinesVisible=false;
+  this.rangeMinorGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeMinorGridlinePaint=Color.white;
+  this.foregroundDomainMarkers=new HashMap();
+  this.backgroundDomainMarkers=new HashMap();
+  this.foregroundRangeMarkers=new HashMap();
+  this.backgroundRangeMarkers=new HashMap();
+  this.anchorValue=0.0;
+  this.domainCrosshairVisible=false;
+  this.domainCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.domainCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.rangeCrosshairVisible=DEFAULT_CROSSHAIR_VISIBLE;
+  this.rangeCrosshairValue=0.0;
+  this.rangeCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.rangeCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.annotations=new java.util.ArrayList();
+  this.rangePannable=false;
+  this.shadowGenerator=new DefaultShadowGenerator();
+}
+---------------------
+public CategoryPlot(CategoryDataset dataset,CategoryAxis domainAxis,ValueAxis rangeAxis,CategoryItemRenderer renderer){
+  super();
+  this.orientation=PlotOrientation.VERTICAL;
+  this.domainAxes=new ObjectList();
+  this.domainAxisLocations=new ObjectList();
+  this.rangeAxes=new ObjectList();
+  this.rangeAxisLocations=new ObjectList();
+  this.datasetToDomainAxesMap=new TreeMap();
+  this.datasetToRangeAxesMap=new TreeMap();
+  this.renderers=new ObjectList();
+  this.datasets=new ObjectList();
+  this.datasets.set(0,dataset);
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+  this.axisOffset=new RectangleInsets(4.0,4.0,4.0,4.0);
+  setDomainAxisLocation(AxisLocation.BOTTOM_OR_LEFT,false);
+  setRangeAxisLocation(AxisLocation.TOP_OR_LEFT,false);
+  this.renderers.set(0,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  this.domainAxes.set(0,domainAxis);
+  this.mapDatasetToDomainAxis(0,0);
+  if (domainAxis != null) {
+    domainAxis.setPlot(this);
+    domainAxis.addChangeListener(this);
+  }
+  this.drawSharedDomainAxis=false;
+  this.rangeAxes.set(0,rangeAxis);
+  this.mapDatasetToRangeAxis(0,0);
+  if (rangeAxis != null) {
+    rangeAxis.setPlot(this);
+    rangeAxis.addChangeListener(this);
+  }
+  configureDomainAxes();
+ rank2fixstart   configureRangeAxes(); rank2fixend 
+  this.domainGridlinesVisible=DEFAULT_DOMAIN_GRIDLINES_VISIBLE;
+  this.domainGridlinePosition=CategoryAnchor.MIDDLE;
+  this.domainGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.domainGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeZeroBaselineVisible=false;
+  this.rangeZeroBaselinePaint=Color.black;
+  this.rangeZeroBaselineStroke=new BasicStroke(0.5f);
+  this.rangeGridlinesVisible=DEFAULT_RANGE_GRIDLINES_VISIBLE;
+  this.rangeGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeMinorGridlinesVisible=false;
+  this.rangeMinorGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeMinorGridlinePaint=Color.white;
+  this.foregroundDomainMarkers=new HashMap();
+  this.backgroundDomainMarkers=new HashMap();
+  this.foregroundRangeMarkers=new HashMap();
+  this.backgroundRangeMarkers=new HashMap();
+  this.anchorValue=0.0;
+  this.domainCrosshairVisible=false;
+  this.domainCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.domainCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.rangeCrosshairVisible=DEFAULT_CROSSHAIR_VISIBLE;
+  this.rangeCrosshairValue=0.0;
+  this.rangeCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.rangeCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.annotations=new java.util.ArrayList();
+  this.rangePannable=false;
+  this.shadowGenerator=new DefaultShadowGenerator();
+}
+---------------------
+public CategoryPlot(CategoryDataset dataset,CategoryAxis domainAxis,ValueAxis rangeAxis,CategoryItemRenderer renderer){
+  super();
+  this.orientation=PlotOrientation.VERTICAL;
+  this.domainAxes=new ObjectList();
+  this.domainAxisLocations=new ObjectList();
+  this.rangeAxes=new ObjectList();
+  this.rangeAxisLocations=new ObjectList();
+  this.datasetToDomainAxesMap=new TreeMap();
+  this.datasetToRangeAxesMap=new TreeMap();
+  this.renderers=new ObjectList();
+  this.datasets=new ObjectList();
+  this.datasets.set(0,dataset);
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+  this.axisOffset=new RectangleInsets(4.0,4.0,4.0,4.0);
+  setDomainAxisLocation(AxisLocation.BOTTOM_OR_LEFT,false);
+  setRangeAxisLocation(AxisLocation.TOP_OR_LEFT,false);
+  this.renderers.set(0,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  this.domainAxes.set(0,domainAxis);
+  this.mapDatasetToDomainAxis(0,0);
+  if (domainAxis != null) {
+    domainAxis.setPlot(this);
+    domainAxis.addChangeListener(this);
+  }
+  this.drawSharedDomainAxis=false;
+  this.rangeAxes.set(0,rangeAxis);
+  this.mapDatasetToRangeAxis(0,0);
+  if (rangeAxis != null) {
+    rangeAxis.setPlot(this);
+    rangeAxis.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+ rank2fixstart   this.domainGridlinesVisible=DEFAULT_DOMAIN_GRIDLINES_VISIBLE; rank2fixend 
+  this.domainGridlinePosition=CategoryAnchor.MIDDLE;
+  this.domainGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.domainGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeZeroBaselineVisible=false;
+  this.rangeZeroBaselinePaint=Color.black;
+  this.rangeZeroBaselineStroke=new BasicStroke(0.5f);
+  this.rangeGridlinesVisible=DEFAULT_RANGE_GRIDLINES_VISIBLE;
+  this.rangeGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeMinorGridlinesVisible=false;
+  this.rangeMinorGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeMinorGridlinePaint=Color.white;
+  this.foregroundDomainMarkers=new HashMap();
+  this.backgroundDomainMarkers=new HashMap();
+  this.foregroundRangeMarkers=new HashMap();
+  this.backgroundRangeMarkers=new HashMap();
+  this.anchorValue=0.0;
+  this.domainCrosshairVisible=false;
+  this.domainCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.domainCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.rangeCrosshairVisible=DEFAULT_CROSSHAIR_VISIBLE;
+  this.rangeCrosshairValue=0.0;
+  this.rangeCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.rangeCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.annotations=new java.util.ArrayList();
+  this.rangePannable=false;
+  this.shadowGenerator=new DefaultShadowGenerator();
+}
+---------------------
+public CategoryPlot(CategoryDataset dataset,CategoryAxis domainAxis,ValueAxis rangeAxis,CategoryItemRenderer renderer){
+  super();
+  this.orientation=PlotOrientation.VERTICAL;
+  this.domainAxes=new ObjectList();
+  this.domainAxisLocations=new ObjectList();
+  this.rangeAxes=new ObjectList();
+  this.rangeAxisLocations=new ObjectList();
+  this.datasetToDomainAxesMap=new TreeMap();
+  this.datasetToRangeAxesMap=new TreeMap();
+  this.renderers=new ObjectList();
+  this.datasets=new ObjectList();
+  this.datasets.set(0,dataset);
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+  this.axisOffset=new RectangleInsets(4.0,4.0,4.0,4.0);
+  setDomainAxisLocation(AxisLocation.BOTTOM_OR_LEFT,false);
+  setRangeAxisLocation(AxisLocation.TOP_OR_LEFT,false);
+  this.renderers.set(0,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  this.domainAxes.set(0,domainAxis);
+  this.mapDatasetToDomainAxis(0,0);
+  if (domainAxis != null) {
+    domainAxis.setPlot(this);
+    domainAxis.addChangeListener(this);
+  }
+  this.drawSharedDomainAxis=false;
+  this.rangeAxes.set(0,rangeAxis);
+  this.mapDatasetToRangeAxis(0,0);
+  if (rangeAxis != null) {
+    rangeAxis.setPlot(this);
+    rangeAxis.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  this.domainGridlinesVisible=DEFAULT_DOMAIN_GRIDLINES_VISIBLE;
+ rank2fixstart   this.domainGridlinePosition=CategoryAnchor.MIDDLE; rank2fixend 
+  this.domainGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.domainGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeZeroBaselineVisible=false;
+  this.rangeZeroBaselinePaint=Color.black;
+  this.rangeZeroBaselineStroke=new BasicStroke(0.5f);
+  this.rangeGridlinesVisible=DEFAULT_RANGE_GRIDLINES_VISIBLE;
+  this.rangeGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeMinorGridlinesVisible=false;
+  this.rangeMinorGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeMinorGridlinePaint=Color.white;
+  this.foregroundDomainMarkers=new HashMap();
+  this.backgroundDomainMarkers=new HashMap();
+  this.foregroundRangeMarkers=new HashMap();
+  this.backgroundRangeMarkers=new HashMap();
+  this.anchorValue=0.0;
+  this.domainCrosshairVisible=false;
+  this.domainCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.domainCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.rangeCrosshairVisible=DEFAULT_CROSSHAIR_VISIBLE;
+  this.rangeCrosshairValue=0.0;
+  this.rangeCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.rangeCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.annotations=new java.util.ArrayList();
+  this.rangePannable=false;
+  this.shadowGenerator=new DefaultShadowGenerator();
+}
+---------------------
+public CategoryPlot(CategoryDataset dataset,CategoryAxis domainAxis,ValueAxis rangeAxis,CategoryItemRenderer renderer){
+  super();
+  this.orientation=PlotOrientation.VERTICAL;
+  this.domainAxes=new ObjectList();
+  this.domainAxisLocations=new ObjectList();
+  this.rangeAxes=new ObjectList();
+  this.rangeAxisLocations=new ObjectList();
+  this.datasetToDomainAxesMap=new TreeMap();
+  this.datasetToRangeAxesMap=new TreeMap();
+  this.renderers=new ObjectList();
+  this.datasets=new ObjectList();
+  this.datasets.set(0,dataset);
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+  this.axisOffset=new RectangleInsets(4.0,4.0,4.0,4.0);
+  setDomainAxisLocation(AxisLocation.BOTTOM_OR_LEFT,false);
+  setRangeAxisLocation(AxisLocation.TOP_OR_LEFT,false);
+  this.renderers.set(0,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  this.domainAxes.set(0,domainAxis);
+  this.mapDatasetToDomainAxis(0,0);
+  if (domainAxis != null) {
+    domainAxis.setPlot(this);
+    domainAxis.addChangeListener(this);
+  }
+  this.drawSharedDomainAxis=false;
+  this.rangeAxes.set(0,rangeAxis);
+  this.mapDatasetToRangeAxis(0,0);
+  if (rangeAxis != null) {
+    rangeAxis.setPlot(this);
+    rangeAxis.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  this.domainGridlinesVisible=DEFAULT_DOMAIN_GRIDLINES_VISIBLE;
+  this.domainGridlinePosition=CategoryAnchor.MIDDLE;
+ rank2fixstart   this.domainGridlineStroke=DEFAULT_GRIDLINE_STROKE; rank2fixend 
+  this.domainGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeZeroBaselineVisible=false;
+  this.rangeZeroBaselinePaint=Color.black;
+  this.rangeZeroBaselineStroke=new BasicStroke(0.5f);
+  this.rangeGridlinesVisible=DEFAULT_RANGE_GRIDLINES_VISIBLE;
+  this.rangeGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeMinorGridlinesVisible=false;
+  this.rangeMinorGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeMinorGridlinePaint=Color.white;
+  this.foregroundDomainMarkers=new HashMap();
+  this.backgroundDomainMarkers=new HashMap();
+  this.foregroundRangeMarkers=new HashMap();
+  this.backgroundRangeMarkers=new HashMap();
+  this.anchorValue=0.0;
+  this.domainCrosshairVisible=false;
+  this.domainCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.domainCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.rangeCrosshairVisible=DEFAULT_CROSSHAIR_VISIBLE;
+  this.rangeCrosshairValue=0.0;
+  this.rangeCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.rangeCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.annotations=new java.util.ArrayList();
+  this.rangePannable=false;
+  this.shadowGenerator=new DefaultShadowGenerator();
+}
+---------------------
+public CategoryPlot(CategoryDataset dataset,CategoryAxis domainAxis,ValueAxis rangeAxis,CategoryItemRenderer renderer){
+  super();
+  this.orientation=PlotOrientation.VERTICAL;
+  this.domainAxes=new ObjectList();
+  this.domainAxisLocations=new ObjectList();
+  this.rangeAxes=new ObjectList();
+  this.rangeAxisLocations=new ObjectList();
+  this.datasetToDomainAxesMap=new TreeMap();
+  this.datasetToRangeAxesMap=new TreeMap();
+  this.renderers=new ObjectList();
+  this.datasets=new ObjectList();
+  this.datasets.set(0,dataset);
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+  this.axisOffset=new RectangleInsets(4.0,4.0,4.0,4.0);
+  setDomainAxisLocation(AxisLocation.BOTTOM_OR_LEFT,false);
+  setRangeAxisLocation(AxisLocation.TOP_OR_LEFT,false);
+  this.renderers.set(0,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  this.domainAxes.set(0,domainAxis);
+  this.mapDatasetToDomainAxis(0,0);
+  if (domainAxis != null) {
+    domainAxis.setPlot(this);
+    domainAxis.addChangeListener(this);
+  }
+  this.drawSharedDomainAxis=false;
+  this.rangeAxes.set(0,rangeAxis);
+  this.mapDatasetToRangeAxis(0,0);
+  if (rangeAxis != null) {
+    rangeAxis.setPlot(this);
+    rangeAxis.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  this.domainGridlinesVisible=DEFAULT_DOMAIN_GRIDLINES_VISIBLE;
+  this.domainGridlinePosition=CategoryAnchor.MIDDLE;
+  this.domainGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+ rank2fixstart   this.domainGridlinePaint=DEFAULT_GRIDLINE_PAINT; rank2fixend 
+  this.rangeZeroBaselineVisible=false;
+  this.rangeZeroBaselinePaint=Color.black;
+  this.rangeZeroBaselineStroke=new BasicStroke(0.5f);
+  this.rangeGridlinesVisible=DEFAULT_RANGE_GRIDLINES_VISIBLE;
+  this.rangeGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeMinorGridlinesVisible=false;
+  this.rangeMinorGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeMinorGridlinePaint=Color.white;
+  this.foregroundDomainMarkers=new HashMap();
+  this.backgroundDomainMarkers=new HashMap();
+  this.foregroundRangeMarkers=new HashMap();
+  this.backgroundRangeMarkers=new HashMap();
+  this.anchorValue=0.0;
+  this.domainCrosshairVisible=false;
+  this.domainCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.domainCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.rangeCrosshairVisible=DEFAULT_CROSSHAIR_VISIBLE;
+  this.rangeCrosshairValue=0.0;
+  this.rangeCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.rangeCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.annotations=new java.util.ArrayList();
+  this.rangePannable=false;
+  this.shadowGenerator=new DefaultShadowGenerator();
+}
+---------------------
+public CategoryPlot(CategoryDataset dataset,CategoryAxis domainAxis,ValueAxis rangeAxis,CategoryItemRenderer renderer){
+  super();
+  this.orientation=PlotOrientation.VERTICAL;
+  this.domainAxes=new ObjectList();
+  this.domainAxisLocations=new ObjectList();
+  this.rangeAxes=new ObjectList();
+  this.rangeAxisLocations=new ObjectList();
+  this.datasetToDomainAxesMap=new TreeMap();
+  this.datasetToRangeAxesMap=new TreeMap();
+  this.renderers=new ObjectList();
+  this.datasets=new ObjectList();
+  this.datasets.set(0,dataset);
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+  this.axisOffset=new RectangleInsets(4.0,4.0,4.0,4.0);
+  setDomainAxisLocation(AxisLocation.BOTTOM_OR_LEFT,false);
+  setRangeAxisLocation(AxisLocation.TOP_OR_LEFT,false);
+  this.renderers.set(0,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  this.domainAxes.set(0,domainAxis);
+  this.mapDatasetToDomainAxis(0,0);
+  if (domainAxis != null) {
+    domainAxis.setPlot(this);
+    domainAxis.addChangeListener(this);
+  }
+  this.drawSharedDomainAxis=false;
+  this.rangeAxes.set(0,rangeAxis);
+  this.mapDatasetToRangeAxis(0,0);
+  if (rangeAxis != null) {
+    rangeAxis.setPlot(this);
+    rangeAxis.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  this.domainGridlinesVisible=DEFAULT_DOMAIN_GRIDLINES_VISIBLE;
+  this.domainGridlinePosition=CategoryAnchor.MIDDLE;
+  this.domainGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.domainGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+ rank2fixstart   this.rangeZeroBaselineVisible=false; rank2fixend 
+  this.rangeZeroBaselinePaint=Color.black;
+  this.rangeZeroBaselineStroke=new BasicStroke(0.5f);
+  this.rangeGridlinesVisible=DEFAULT_RANGE_GRIDLINES_VISIBLE;
+  this.rangeGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeMinorGridlinesVisible=false;
+  this.rangeMinorGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeMinorGridlinePaint=Color.white;
+  this.foregroundDomainMarkers=new HashMap();
+  this.backgroundDomainMarkers=new HashMap();
+  this.foregroundRangeMarkers=new HashMap();
+  this.backgroundRangeMarkers=new HashMap();
+  this.anchorValue=0.0;
+  this.domainCrosshairVisible=false;
+  this.domainCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.domainCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.rangeCrosshairVisible=DEFAULT_CROSSHAIR_VISIBLE;
+  this.rangeCrosshairValue=0.0;
+  this.rangeCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.rangeCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.annotations=new java.util.ArrayList();
+  this.rangePannable=false;
+  this.shadowGenerator=new DefaultShadowGenerator();
+}
+---------------------
+public CategoryPlot(CategoryDataset dataset,CategoryAxis domainAxis,ValueAxis rangeAxis,CategoryItemRenderer renderer){
+  super();
+  this.orientation=PlotOrientation.VERTICAL;
+  this.domainAxes=new ObjectList();
+  this.domainAxisLocations=new ObjectList();
+  this.rangeAxes=new ObjectList();
+  this.rangeAxisLocations=new ObjectList();
+  this.datasetToDomainAxesMap=new TreeMap();
+  this.datasetToRangeAxesMap=new TreeMap();
+  this.renderers=new ObjectList();
+  this.datasets=new ObjectList();
+  this.datasets.set(0,dataset);
+  if (dataset != null) {
+    dataset.addChangeListener(this);
+  }
+  this.axisOffset=new RectangleInsets(4.0,4.0,4.0,4.0);
+  setDomainAxisLocation(AxisLocation.BOTTOM_OR_LEFT,false);
+  setRangeAxisLocation(AxisLocation.TOP_OR_LEFT,false);
+  this.renderers.set(0,renderer);
+  if (renderer != null) {
+    renderer.setPlot(this);
+    renderer.addChangeListener(this);
+  }
+  this.domainAxes.set(0,domainAxis);
+  this.mapDatasetToDomainAxis(0,0);
+  if (domainAxis != null) {
+    domainAxis.setPlot(this);
+    domainAxis.addChangeListener(this);
+  }
+  this.drawSharedDomainAxis=false;
+  this.rangeAxes.set(0,rangeAxis);
+  this.mapDatasetToRangeAxis(0,0);
+  if (rangeAxis != null) {
+    rangeAxis.setPlot(this);
+    rangeAxis.addChangeListener(this);
+  }
+  configureDomainAxes();
+  configureRangeAxes();
+  this.domainGridlinesVisible=DEFAULT_DOMAIN_GRIDLINES_VISIBLE;
+  this.domainGridlinePosition=CategoryAnchor.MIDDLE;
+  this.domainGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.domainGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeZeroBaselineVisible=false;
+ rank2fixstart   this.rangeZeroBaselinePaint=Color.black; rank2fixend 
+  this.rangeZeroBaselineStroke=new BasicStroke(0.5f);
+  this.rangeGridlinesVisible=DEFAULT_RANGE_GRIDLINES_VISIBLE;
+  this.rangeGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeGridlinePaint=DEFAULT_GRIDLINE_PAINT;
+  this.rangeMinorGridlinesVisible=false;
+  this.rangeMinorGridlineStroke=DEFAULT_GRIDLINE_STROKE;
+  this.rangeMinorGridlinePaint=Color.white;
+  this.foregroundDomainMarkers=new HashMap();
+  this.backgroundDomainMarkers=new HashMap();
+  this.foregroundRangeMarkers=new HashMap();
+  this.backgroundRangeMarkers=new HashMap();
+  this.anchorValue=0.0;
+  this.domainCrosshairVisible=false;
+  this.domainCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.domainCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.rangeCrosshairVisible=DEFAULT_CROSSHAIR_VISIBLE;
+  this.rangeCrosshairValue=0.0;
+  this.rangeCrosshairStroke=DEFAULT_CROSSHAIR_STROKE;
+  this.rangeCrosshairPaint=DEFAULT_CROSSHAIR_PAINT;
+  this.annotations=new java.util.ArrayList();
+  this.rangePannable=false;
+  this.shadowGenerator=new DefaultShadowGenerator();
+}
+---------------------

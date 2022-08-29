@@ -48,24 +48,24 @@ def cut_data(token_seq, token_length_for_reserve):
 
 
 def generate_token_seq(tokens,token_length_for_reserve):
-    t_seq = []
-    last_token=None
-    for i in range(len(tokens)):
-        token = tokens[i]
-        if isinstance(token, javalang.tokenizer.String):
-            tmp_token = ["stringliteral"]
-        else:
-            tmp_token = []
-            cur_token = solve_camel_and_underline(token.value)
-            if i > 0 and isinstance(token, javalang.tokenizer.Identifier) and (
-                    isinstance(tokens[i - 1], javalang.tokenizer.Identifier) or isinstance(tokens[i - 1],
-                                                                                           javalang.tokenizer.BasicType)):
-                type_token_seq = solve_camel_and_underline(tokens[i - 1].value)
-                for t_token in cur_token:
-                    tmp_token.append([type_token_seq, cur_token[:cur_token.index(t_token)], t_token])
-
-        t_seq += tmp_token
-    return cut_data(t_seq, token_length_for_reserve)
+	last_token=None
+	t_seq = []
+	for token in tokens:
+		if isinstance(token, javalang.tokenizer.String):
+			tmp_token = ["stringliteral"]
+		else:
+			tmp_token = solve_camel_and_underline(token.value)
+			if last_token is not None and isinstance(token, javalang.tokenizer.Identifier) and (
+					isinstance(last_token, javalang.tokenizer.Identifier) or isinstance(last_token,
+																						   javalang.tokenizer.BasicType)) and last_token.value!='rank2fixstart':
+				cur_token=tmp_token
+				tmp_token=[]
+				type_token_seq = solve_camel_and_underline(last_token.value)
+				for t_token in cur_token:
+					tmp_token.append([type_token_seq, cur_token[:cur_token.index(t_token)], t_token])
+		last_token=token
+		t_seq += tmp_token
+	return cut_data(t_seq, token_length_for_reserve)
 
 def token2num(tokens,vocab_dict,index_oov):
     num_seq=[]
@@ -75,14 +75,17 @@ def token2num(tokens,vocab_dict,index_oov):
         else:
 
             identifiers=token[0]
+            print(identifiers)
             prev_token=token[1]
             cur_token=token[2]
-            iden_nums=[vocab_dict[t] if token in vocab_dict else index_oov for t in identifiers]
-            prev_nums=[vocab_dict[t] if token in vocab_dict else index_oov for t in prev_token]
-            cur_num=vocab_dict[cur_token] if token in vocab_dict else index_oov
+            iden_nums=[vocab_dict[t] if t in vocab_dict else index_oov for t in identifiers]
+            prev_nums=[vocab_dict[t] if t in vocab_dict else index_oov for t in prev_token]
+            cur_num=vocab_dict[cur_token] if cur_token in vocab_dict else index_oov
             num=[iden_nums,prev_nums,cur_num]
         num_seq.append(num)
     return num_seq
+
+
 if __name__ == "__main__":
 
     current_pattern = sys.argv[1]
@@ -174,7 +177,7 @@ if __name__ == "__main__":
         random.shuffle(normal_labels)
         if not os.path.exists(os.path.join(output_data_dir, part)):
             os.makedirs(os.path.join(output_data_dir, part))
-        with open(os.path.join(output_data_dir, part, "x_w2v_.pkl"), "wb") as file:
+        with open(os.path.join(output_data_dir, part, "x_w2v_new.pkl"), "wb") as file:
             pickle.dump(normal_corpus, file)
         with open(os.path.join(output_data_dir, part, "y_.pkl"), "wb") as file:
             pickle.dump(normal_labels, file)

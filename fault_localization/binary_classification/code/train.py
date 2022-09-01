@@ -42,7 +42,7 @@ if __name__ == "__main__":
 	pretrain_vectors = load_from_file(os.path.join(root, "vectors.pkl"))
 
 	HIDDEN_DIM = 50
-	EPOCHS = 30
+	EPOCHS = 7
 	BATCH_SIZE = 64
 	LABELS = 2
 	USE_GPU = True

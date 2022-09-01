@@ -17,6 +17,7 @@ class EnhanceEmbedding(nn.Embedding):
     def forward(self,input):
         method='identifier'
         final_embeddings=torch.FloatTensor().to(self.device)
+        five=torch.FloatTensor([0.5]).to(self.device)
         for tokens in input:
             final_embedding=torch.FloatTensor().to(self.device) #embedding for one sample, len 400
             for i in range(len(tokens)):
@@ -31,7 +32,7 @@ class EnhanceEmbedding(nn.Embedding):
                         for j in range(len(token[0])):
                             identifier=token[0][j]
                             tmp_embedding=torch.cat((tmp_embedding,self.embedding(torch.LongTensor([identifier]).to(self.device))),dim=0)
-                        final_token=torch.mean(tmp_embedding,axis=0)*0.5+self.embedding(torch.LongTensor([token[2]]).to(self.device))*0.5
+                        final_token=torch.mean(tmp_embedding,axis=0)*five+self.embedding(torch.LongTensor([token[2]]).to(self.device))*five
                         final_embedding=torch.cat((final_embedding,final_token),dim=0)
                     else:
                         pass #todo

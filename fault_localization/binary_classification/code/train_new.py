@@ -53,9 +53,9 @@ if __name__ == "__main__":
 	print("Fix pattern: {}".format(fix_pattern))
 	root = "../data/{}/".format(fix_pattern)
 
-	train_x = load_from_file(os.path.join(root, "train/x_w2v_new.pkl"))
-	val_x = load_from_file(os.path.join(root, "val/x_w2v_new.pkl"))
-	test_x = load_from_file(os.path.join(root, "test/x_w2v_new.pkl"))
+	train_x = load_from_file(os.path.join(root, "train/x_w2v_new_more.pkl"))
+	val_x = load_from_file(os.path.join(root, "val/x_w2v_new_more.pkl"))
+	test_x = load_from_file(os.path.join(root, "test/x_w2v_new_more.pkl"))
 	
 	train_y = load_from_file(os.path.join(root, "train/y_.pkl"))
 	val_y = load_from_file(os.path.join(root, "val/y_.pkl"))

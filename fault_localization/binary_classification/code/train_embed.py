@@ -28,6 +28,7 @@ def print_parameter_statistics(model):
 
 if __name__ == "__main__":
 	fix_pattern = sys.argv[1]
+	torch.cuda.set_device(1)
 	print("Fix pattern: {}".format(fix_pattern))
 	root = "../data/{}/".format(fix_pattern)
 
@@ -42,7 +43,7 @@ if __name__ == "__main__":
 	pretrain_vectors = load_from_file(os.path.join(root, "vectors.pkl"))
 
 	HIDDEN_DIM = 50
-	EPOCHS = 30
+	EPOCHS = 20
 	BATCH_SIZE = 64
 	LABELS = 2
 	USE_GPU = True
@@ -145,7 +146,6 @@ if __name__ == "__main__":
 			batch = get_batch(val_x, val_y, i, BATCH_SIZE)
 			val_inputs, val_labels = batch
 			if USE_GPU:
-				val_inputs = val_inputs.cuda()
 				val_labels = val_labels.cuda()
 			i += BATCH_SIZE
 			output = model(val_inputs)
@@ -169,7 +169,7 @@ if __name__ == "__main__":
 
 		# save model
 		if val_acc_[-1] > best_val_acc:
-			model_save_dir = "./model_save/{}/".format(fix_pattern)
+			model_save_dir = "./model_save_embeded/{}/".format(fix_pattern)
 			if not os.path.exists(model_save_dir):
 				os.makedirs(model_save_dir)
 			torch.save(model.state_dict(), os.path.join(model_save_dir, "model_params.pkl"))
@@ -200,7 +200,7 @@ if __name__ == "__main__":
 	total_fp = 0.0
 	total_fn = 0.0
 
-	model.load_state_dict(torch.load("./model_save_embed/{}/model_params.pkl".format(fix_pattern)))
+	model.load_state_dict(torch.load("./model_save_embeded/{}/model_params.pkl".format(fix_pattern)))
 	model.eval()
 
 	i = 0
@@ -208,7 +208,6 @@ if __name__ == "__main__":
 		batch = get_batch(test_x, test_y, i, BATCH_SIZE)
 		test_inputs, test_labels = batch
 		if USE_GPU:
-			test_inputs = test_inputs.cuda()
 			test_labels = test_labels.cuda()
 		i += BATCH_SIZE
 		output = model(test_inputs)
